@@ -1,0 +1,64 @@
+At time of running it was 20:35 and about 42 farenheit, or 278K
+
+Waiting for IP...
+ip:192.168.1.246,mask:255.255.255.0,gw:192.168.1.1
+TCP connected
+HTTP/1.1 200 OK
+Server: nginx
+Date: Sat, 14 Mar 2015 00:34:25 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 467
+Connection: close
+X-Source: back
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET, POST
+
+{"coord":{"lon":-76.85,"lat":41.01},"sys":{"message":0.0031,"country":"US","sunrise":1426331990,"sunset":1426374786},"weather":[{"id":803,"main":"Clouds","description":"broken clouds","icon":"04n"}],"base":"cmc stations","main":{"temp":276.002,"temp_min":276.002,"temp_max":276.002,"pressure":990.22,"sea_level":1042.63,"grnd_level":990.22,"humidity":59},"wind":{"speed":3.07,"deg":180.502},"clouds":{"all":64},"dt":1426293265,"id":5201470,"name":"Milton","cod":200}
+TCP disconnect
+TCP connected
+TCP disconnect
+TCP connected
+HTTP/1.1 200 OK
+Server: nginx
+Date: Sat, 14 Mar 2015 00:35:48 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 467
+Connection: close
+X-Source: redis
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET, POST
+
+{"coord":{"lon":-76.85,"lat":41.01},"sys":{"message":0.0031,"country":"US","sunrise":1426331990,"sunset":1426374786},"weather":[{"id":803,"main":"Clouds","description":"broken clouds","icon":"04n"}],"base":"cmc stations","main":{"temp":276.002,"temp_min":276.002,"temp_max":276.002,"pressure":990.22,"sea_level":1042.63,"grnd_level":990.22,"humidity":59},"wind":{"speed":3.07,"deg":180.502},"clouds":{"all":64},"dt":1426293265,"id":5201470,"name":"Milton","cod":200}
+TCP disconnect
+TCP connected
+HTTP/1.1 200 OK
+Server: nginx
+Date: Sat, 14 Mar 2015 00:35:58 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 467
+Connection: close
+X-Source: redis
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET, POST
+
+{"coord":{"lon":-76.85,"lat":41.01},"sys":{"message":0.0031,"country":"US","sunrise":1426331990,"sunset":1426374786},"weather":[{"id":803,"main":"Clouds","description":"broken clouds","icon":"04n"}],"base":"cmc stations","main":{"temp":276.002,"temp_min":276.002,"temp_max":276.002,"pressure":990.22,"sea_level":1042.63,"grnd_level":990.22,"humidity":59},"wind":{"speed":3.07,"deg":180.502},"clouds":{"all":64},"dt":1426293265,"id":5201470,"name":"Milton","cod":200}
+TCP disconnect
+TCP connected
+HTTP/1.1 200 OK
+Server: nginx
+Date: Sat, 14 Mar 2015 00:36:09 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 467
+Connection: close
+X-Source: redis
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET, POST
+
+{"coord":{"lon":-76.85,"lat":41.01},"sys":{"message":0.0031,"country":"US","sunrise":1426331990,"sunset":1426374786},"weather":[{"id":803,"main":"Clouds","description":"broken clouds","icon":"04n"}],"base":"cmc stations","main":{"temp":276.002,"temp_min":276.002,"temp_max":276.002,"pressure":990.22,"sea_level":1042.63,"grnd_level":990.22,"humidity":59},"wind":{"speed":3.07,"deg":180.502},"clouds":{"all":64},"dt":1426293265,"id":5201470,"name":"Milton","cod":200}
+TCP disconnect
+TCP connected
+
