@@ -1,0 +1,99 @@
+#9600 baud, NL&CR
+
+ü8—þŠƒh‡
+ŽŽ‡NŽû‡‡ŠŽþ(‡š
+[Vendor:www.ai-thinker.com Version:0.9.2.4]
+
+ready
+ü<—�þ‚‡,‡
+ŽŽ‡ŽûH‡‡ŠŽþ(‡Úü<Y—ŽþŠ‡,‡ŠŽŽ‡ŠŽû‡ŠŽþh‡Ú
+[Vendor:www.ai-thinker.com Version:0.9.2.4]
+
+ready
+AT
+
+
+OK
+AT+GMR
+
+0018000902-AI03
+
+OK
+AT+CWMODE?
+
++CWMODE:2
+
+OK
+AT+CWMODE=3
+
+
+OK
+AT+CWLAP
+
++CWLAP:(2,"session",-45,"00:24:b2:ae:7a:34",1)
++CWLAP:(0,"bucknell.edu",-70,"6c:f3:7f:e5:09:30",1)
++CWLAP:(0,"eduroam",-69,"6c:f3:7f:e5:09:32",1)
++CWLAP:(0,"bucknell.edu",-86,"00:1a:1e:22:56:22",1)
++CWLAP:(0,"bucknell_guests",-70,"6c:f3:7f:e5:09:31",1)
++CWLAP:(0,"bucknell.edu",-88,"d8:c7:c8:20:57:c0",1)
++CWLAP:(0,"bucknell.edu",-81,"18:64:72:36:e6:c0",1)
++CWLAP:(0,"bucknell_guests",-80,"18:64:72:36:e6:c1",1)
++CWLAP:(0,"bucknell_guests",-88,"18:64:72:36:df:01",1)
++CWLAP:(0,"bucknell_guests",-87,"00:1a:1e:22:56:20",1)
++CWLAP:(0,"eduroam",-85,"00:1a:1e:22:56:21",1)
++CWLAP:(0,"bucknell.edu",-83,"00:24:6c:af:f4:30",6)
++CWLAP:(0,"eduroam",-77,"00:1a:1e:22:3b:a1",6)
++CWLAP:(0,"eduroam",-59,"00:1a:1e:22:43:01",6)
++CWLAP:(0,"bucknell.edu",-59,"00:1a:1e:22:43:02",6)
++CWLAP:(0,"bucknell_guests",-91,"00:1a:1e:22:4e:60",6)
++CWLAP:(0,"bucknell_guests",-60,"00:1a:1e:22:43:00",6)
++CWLAP:(0,"bucknell_guests",-78,"00:1a:1e:22:3b:a0",6)
++CWLAP:(0,"bucknell_guests",-91,"00:1a:1e:22:35:20",6)
++CWLAP:(0,"eduroam",-89,"00:1a:1e:22:35:21",6)
++CWLAP:(0,"eduroam",-87,"d8:c7:c8:03:f6:92",1)
++CWLAP:(0,"bucknell_guests",-85,"d8:c7:c8:20:57:c1",1)
++CWLAP:(0,"eduroam",-88,"d8:c7:c8:20:57:c3",1)
++CWLAP:(0,"bucknell.edu",-59,"d8:c7:c8:a1:da:30",11)
++CWLAP:(0,"eduroam",-57,"d8:c7:c8:a1:da:32",11)
++CWLAP:(0,"bucknell_guests",-46,"00:1a:1e:22:53:20",11)
++CWLAP:(0,"eduroam",-47,"00:1a:1e:22:53:21",11)
++CWLAP:(0,"bucknell.edu",-47,"00:1a:1e:22:53:22",11)
++CWLAP:(0,"eduroam",-87,"00:1a:1e:22:56:a1",11)
++CWLAP:(0,"bucknell.edu",-81,"6c:f3:7f:e5:09:00",11)
++CWLAP:(0,"bucknell_guests",-78,"6c:f3:7f:e5:09:01",11)
++CWLAP:(0,"eduroam",-81,"6c:f3:7f:e5:09:02",11)
++CWLAP:(0,"bucknell_guests",-56,"d8:c7:c8:a1:da:31",11)
++CWLAP:(0,"bucknell_guests",-87,"00:1a:1e:22:56:a0",11)
++CWLAP:(0,"bucknell.edu",-90,"18:64:72:36:df:00",1)
++CWLAP:(0,"bucknell.edu",-88,"d8:c7:c8:03:f6:90",1)
++CWLAP:(0,"bucknell_guests",-84,"d8:c7:c8:03:f6:91",1)
+
+OK
+AT+CWJAP="session","__________"
+
+
+OK
+AT+CIFSR
+
+192.168.4.1
+134.82.134.27
+
+OK
+
+AT+CIOBAUD=115200
+
+OK
+
+#swap baud
+
+AT
+
+OK
+AT+CIFSR
+192.168.4.1
+134.82.134.27
+
+OK
+
+#baud changes may hold after reset...
+#http://defcon-cc.dyndns.org/wiki/ESP8266#Pinbelegung
