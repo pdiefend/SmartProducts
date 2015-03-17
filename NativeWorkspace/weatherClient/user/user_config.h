@@ -1,2 +1,2 @@
-#define SSID "Milo"
-#define SSID_PASSWORD "Mark57Kim67"
+#define SSID "________"
+#define PASS "________"
