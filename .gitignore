@@ -25,3 +25,5 @@
 *.hex
 # Debug files
 *.dSYM/
+#SSID and PASS
+*user_config.h
