@@ -20,18 +20,18 @@ static uint8_t tcp_conn_ok = FALSE;
 
 // OS variables
 os_event_t    user_procTaskQueue[user_procTaskQueueLen];
-static volatile os_timer_t some_timer;
-static volatile os_timer_t network_timer;
+static volatile os_timer_t uploadTimer;
+static volatile os_timer_t networkTimer;
 
 // User variables
 static uint16_t counter = 0;
 
 // Forward Declarations
 static void user_procTask(os_event_t *events);
-void some_timerfunc(void *arg);
+void uploadTimerISR(void *arg);
 void buttonISR(int8_t key);
 void user_init();
-void network_init();
+void networkInit();
 void network_check_ip(void);
 static void tcpNetworkRecvCb(void *arg, char *data, unsigned short len);
 static void tcpNetworkConnectedCb(void *arg);
@@ -39,26 +39,34 @@ static void tcpNetworkReconCb(void *arg, sint8 err);
 static void tcpNetworkDisconCb(void *arg);
 static void init_tcp_conn(void);
 
-void some_timerfunc(void *arg) {
-    ETS_GPIO_INTR_DISABLE();                        // Disable gpio interrupts
+/* ISR to handle the 30 sec timer which sends the number of button presses to thingspeak.com */
+void uploadTimerISR(void *arg) {
+    // Win the race (condition) to store the data to be sent    
+    ETS_GPIO_INTR_DISABLE();
     uint16_t drop_copy = counter;
     counter = 0;
-    ETS_GPIO_INTR_ENABLE();                         // Enable gpio interrupts
+    ETS_GPIO_INTR_ENABLE();
 
+    // Debug info
     os_printf("Button Pressed %d Times\n", drop_copy);
 
+    // prep the data to be sent to Thingspeak    
     uint8_t data[100] = "GET /update?api_key=4U8GOF201NG3X7WM&field1=0000\r\n\r\n"; //at 43, 0 offset
 
+    // input sanitizing
+    if (drop_copy < 0) drop_copy = 0;
     if(drop_copy > 9999) drop_copy = 9999;
 
-    data[44] = (drop_copy / 1000) + 48;
-    drop_copy = drop_copy % 1000;
-    data[45] = (drop_copy / 100) + 48;
-    drop_copy = drop_copy % 100;
-    data[46] = (drop_copy / 10) + 48;
-    drop_copy = drop_copy % 10;
-    data[47] =  drop_copy + 48;
+    // Move along, no stupid integer injections to see here...
+    data[44] = (drop_copy / 1000) + 48; // get the thousands place then offset by zer0 in unicode
+    drop_copy = drop_copy % 1000;       // drop the thousands place
+    data[45] = (drop_copy / 100) + 48;  // get the hundreds place then offset by zero in unicode
+    drop_copy = drop_copy % 100;        // drop the hundreds place
+    data[46] = (drop_copy / 10) + 48;   // get the tens place then offset by zero in unicode
+    drop_copy = drop_copy % 10;         // drop the tens place
+    data[47] =  drop_copy + 48;         // only the ones remain, offset and put them in.
  
+    // previous attempts for prosperity's sake...
     //uint8_t data[100] = "GET /update?api_key=4U8GOF201NG3X7WM&field1=10 HTTP/1.0\r\nHost: http://api.thingspeak.com\r\n\r\n";
     //uint8_t data[20] = "https://api.thingspeak.com/update?api_key=4U8GOF201NG3X7WM%20&field1=8"
     
@@ -67,11 +75,12 @@ void some_timerfunc(void *arg) {
     
 }
 
-//Do nothing function
+/* Do nothing function */
 static void ICACHE_FLASH_ATTR user_procTask(os_event_t *events) {
     os_delay_us(1000);
 }
 
+/* ISR to handle positive edges of the interrupt pin */
 void buttonISR(int8_t key) {
     counter++;
     uint32 gpio_status = GPIO_REG_READ(GPIO_STATUS_ADDRESS);
@@ -79,118 +88,117 @@ void buttonISR(int8_t key) {
 }
 
 
-//Init function 
+/* User Init, code execution starts here from OS */
 void ICACHE_FLASH_ATTR user_init() {
-    wifi_station_disconnect();
-    uart_init(BIT_RATE_57600, BIT_RATE_57600);    // Init UART @ 57600 bps    
+    uart_init(BIT_RATE_115200, BIT_RATE_115200);                    // Init UART @ 115200 bps    
     
-    ETS_GPIO_INTR_DISABLE();
-    gpio_init();
-
-    ETS_GPIO_INTR_ATTACH(buttonISR, 0);          // GPIO0 interrupt handler
-    PIN_FUNC_SELECT(PERIPHS_IO_MUX_MTDI_U, FUNC_GPIO0);    // Set GPIO0 function
-    gpio_output_set(0, 0, 0, GPIO_ID_PIN(0));              // Set GPIO0 as input
-    GPIO_REG_WRITE(GPIO_STATUS_W1TC_ADDRESS, BIT(0));      // Clear GPIO0 status
-    gpio_pin_intr_state_set(GPIO_ID_PIN(0), GPIO_PIN_INTR_POSEDGE);            // Interrupt on posedge
-    ETS_GPIO_INTR_ENABLE();                                 // Enable gpio interrupts
+    ETS_GPIO_INTR_DISABLE();                                        // Disable Interrupts
+    gpio_init();                                                    // Enable GPIOS
+    ETS_GPIO_INTR_ATTACH(buttonISR, 0);                             // GPIO0 interrupt handler
+    PIN_FUNC_SELECT(PERIPHS_IO_MUX_MTDI_U, FUNC_GPIO0);             // Set GPIO0 function
+    gpio_output_set(0, 0, 0, GPIO_ID_PIN(0));                       // Set GPIO0 as input
+    GPIO_REG_WRITE(GPIO_STATUS_W1TC_ADDRESS, BIT(0));               // Clear GPIO0 status
+    gpio_pin_intr_state_set(GPIO_ID_PIN(0), GPIO_PIN_INTR_POSEDGE); // Interrupt on posedge
+    ETS_GPIO_INTR_ENABLE();                                         // Enable interrupts
 
     //Setup timer
-    os_timer_disarm(&some_timer);
-    os_timer_setfn(&some_timer, (os_timer_func_t *)some_timerfunc, NULL);
-    os_timer_arm(&some_timer, 30000, 1);
+    os_timer_disarm(&uploadTimer);
+    os_timer_setfn(&uploadTimer, (os_timer_func_t *)uploadTimerISR, NULL);
+    os_timer_arm(&uploadTimer, 30000, 1); // every 30 seconds, max is 15 seconds this will change
+    // for the IoToliet app to have a different program flow entirely with data sent as it is useful
     
-    network_init();                                         // Init network timer
-    
-    char ssid[32] = SSID;                        // Wifi SSID
-    char password[64] = PASS;                      // Wifi Password
-    struct station_config stationConf;                      // Station conf struct    
-    wifi_set_opmode(0x1);                                   // Set station mode
-    os_memcpy(&stationConf.ssid, ssid, 32);                 // Set settings
-    os_memcpy(&stationConf.password, password, 64);         // Set settings
-    wifi_station_set_config(&stationConf);                  // Set wifi conf
-    wifi_status_led_install(2, PERIPHS_IO_MUX_MTCK_U, FUNC_GPIO2);  // Wifi LED status
+    networkInit();
+    char ssid[32] = SSID;
+    char password[64] = PASS;
+    struct station_config stationConf;
+    wifi_set_opmode(0x1);               // Client-only mode
+    os_memcpy(&stationConf.ssid, ssid, 32);
+    os_memcpy(&stationConf.password, password, 64);
+    wifi_station_set_config(&stationConf);
+    wifi_status_led_install(2, PERIPHS_IO_MUX_GPIO2_U, FUNC_GPIO2);     // Set GPIO2 as WiFi status LED
 
     //Start os task
     system_os_task(user_procTask, user_procTaskPrio,user_procTaskQueue, user_procTaskQueueLen);
-    os_printf("\n\rStartup done\n\r");                                  // Startup done
+    os_printf("\n\rStartup done\n\r");
 }
 
-// network init function
-/* See comments in other program */
-void ICACHE_FLASH_ATTR network_init() {       
-    os_timer_disarm(&network_timer);
-    os_timer_setfn(&network_timer, (os_timer_func_t *)network_check_ip, NULL);
-    os_timer_arm(&network_timer, 1000, 0);
+/* network init function */
+void ICACHE_FLASH_ATTR networkInit() {       
+    os_timer_disarm(&networkTimer);
+    os_timer_setfn(&networkTimer, (os_timer_func_t *)network_check_ip, NULL);
+    os_timer_arm(&networkTimer, 1000, 0);
 }
 
-
-/* Check to see if we were issued an IP number. See comments in Server program */
+/* Check to see if we were issued an IP number which means successfull connected */
 void ICACHE_FLASH_ATTR network_check_ip(void) {
     struct ip_info ipconfig;
 
-    os_timer_disarm(&network_timer);                // Disarm timer
+    os_timer_disarm(&networkTimer);                // Disarm timer
     wifi_get_ip_info(STATION_IF, &ipconfig);        // Get Wifi info
 
     if (wifi_station_get_connect_status() == STATION_GOT_IP && ipconfig.ip.addr != 0) {
-        init_tcp_conn();            // Init tcp connection
+        init_tcp_conn();
     }
     else {
         os_printf("Waiting for IP...\n\r");
-        os_timer_setfn(&network_timer, (os_timer_func_t *)network_check_ip, NULL);
-        os_timer_arm(&network_timer, 1000, 0);
+        os_timer_setfn(&networkTimer, (os_timer_func_t *)network_check_ip, NULL);
+        os_timer_arm(&networkTimer, 1000, 0);
     }         
 }
 
-/* tcp Data received callback. Apparently we're doing nothing with the data. */    
+/* tcp Data received callback. Print the data for diagnosic purposes. A Successful
+** run returns the number datapoint that was just received. */    
 static void ICACHE_FLASH_ATTR tcpNetworkRecvCb(void *arg, char *data, unsigned short len) {
     struct espconn *tcpconn=(struct espconn *)arg;
     os_printf(data);
     os_printf("\n");
 }
 
-/* TCP Successfully connected Call back */
+/* tcp Successfully connected Call back */
 static void ICACHE_FLASH_ATTR tcpNetworkConnectedCb(void *arg) {    
-    /* create a connection struct with passed connection data including successfully
-    created connection data */
     struct espconn *tcpconn=(struct espconn *)arg;
-    /* register a call back function for when data is received */
-    espconn_regist_recvcb(tcpconn, tcpNetworkRecvCb);
     
+    // register the call back function for when data is received
+    espconn_regist_recvcb(tcpconn, tcpNetworkRecvCb);    
+
     os_printf("TCP connected\n\r"); 
     tcp_conn_ok = TRUE;
 }
 
-/* TCP Reconnected Callback. Called when the connection was reestablished 
-When this is called is unclear.*/
+/* Callback Function for when the network was reconnected, re-init stuff */
 static void ICACHE_FLASH_ATTR tcpNetworkReconCb(void *arg, sint8 err) {
     os_printf("TCP reconnect\n\r");
     tcp_conn_ok = FALSE;
     /* Reset the network connections */
-    network_init();
+    networkInit();
 }
 
-/* TODO what the F is this and the previous function doing */
+/* Callback Function for when the network was disconnected, re-init stuff */
 static void ICACHE_FLASH_ATTR tcpNetworkDisconCb(void *arg) {
     os_printf("TCP disconnect\n\r");
     tcp_conn_ok = FALSE;
-    network_init();
+    networkInit();
 }
 
 /* Initialize the TCP connection */
 static void ICACHE_FLASH_ATTR init_tcp_conn(void) {
-    global_tcp_connect.type=ESPCONN_TCP;                     // We want to make a TCP connection
-    global_tcp_connect.state=ESPCONN_NONE;                   // Set default state to none
-    global_tcp_connect.proto.tcp=&global_tcp;                // Give a pointer to our TCP var
-    global_tcp_connect.proto.tcp->local_port=espconn_port(); // Ask a free local port to the API
-    global_tcp_connect.proto.tcp->remote_port=80;          // Set remote port (bcbcostam)
-    // IP to send data to 184.106.153.149   
-    global_tcp_connect.proto.tcp->remote_ip[0]=184;      // Your computer IP
-    global_tcp_connect.proto.tcp->remote_ip[1]=106;      // Your computer IP
-    global_tcp_connect.proto.tcp->remote_ip[2]=153;      // Your computer IP
-    global_tcp_connect.proto.tcp->remote_ip[3]=149;      // Your computer IP
+    global_tcp_connect.type=ESPCONN_TCP;
+    global_tcp_connect.state=ESPCONN_NONE;
+    global_tcp_connect.proto.tcp=&global_tcp;
+    global_tcp_connect.proto.tcp->local_port=espconn_port();
 
-    espconn_regist_connectcb(&global_tcp_connect, tcpNetworkConnectedCb);   // Register connect callback
-    espconn_regist_disconcb(&global_tcp_connect, tcpNetworkDisconCb);       // Register disconnect callback
-    espconn_regist_reconcb(&global_tcp_connect, tcpNetworkReconCb);         // Register reconnection function
-    espconn_connect(&global_tcp_connect);                                   // Start connection
+    // IP to send data to 184.106.153.149   
+    global_tcp_connect.proto.tcp->remote_ip[0]=184;
+    global_tcp_connect.proto.tcp->remote_ip[1]=106;
+    global_tcp_connect.proto.tcp->remote_ip[2]=153;
+    global_tcp_connect.proto.tcp->remote_ip[3]=149;
+    global_tcp_connect.proto.tcp->remote_port=80;
+
+    // Register Callbacks
+    espconn_regist_connectcb(&global_tcp_connect, tcpNetworkConnectedCb);
+    espconn_regist_disconcb(&global_tcp_connect, tcpNetworkDisconCb);
+    espconn_regist_reconcb(&global_tcp_connect, tcpNetworkReconCb);
+
+    // Fire it up
+    espconn_connect(&global_tcp_connect);
 }
