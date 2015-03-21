@@ -171,7 +171,7 @@ void ICACHE_FLASH_ATTR user_init() {
     network_init();                                         // Init network timer
     
     char ssid[32] = SSID;                                   // Wifi SSID
-    char password[64] = SSID_PASSWORD;                      // Wifi Password
+    char password[64] = PASS;                      // Wifi Password
     struct station_config stationConf;                      // Station conf struct    
     wifi_set_opmode(0x1);                                   // Set station mode
     os_memcpy(&stationConf.ssid, ssid, 32);                 // Set settings
