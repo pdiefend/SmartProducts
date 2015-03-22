@@ -24,7 +24,9 @@ static volatile os_timer_t uploadTimer;
 static volatile os_timer_t networkTimer;
 
 // User variables
-static uint16_t counter = 0;
+static uint32_t counter = 0;
+static uint32_t total = 0;
+static uint16_t lastZero = 0;
 
 // Forward Declarations
 static void user_procTask(os_event_t *events);
@@ -41,38 +43,62 @@ static void init_tcp_conn(void);
 
 /* ISR to handle the 30 sec timer which sends the number of button presses to thingspeak.com */
 void uploadTimerISR(void *arg) {
+
+    uint32_t temp = total;
+
     // Win the race (condition) to store the data to be sent    
     ETS_GPIO_INTR_DISABLE();
-    uint16_t drop_copy = counter;
+    total += counter;
     counter = 0;
     ETS_GPIO_INTR_ENABLE();
 
-    // Debug info
-    os_printf("Button Pressed %d Times\n", drop_copy);
+    // Debug info    
+    os_printf("Temp = %d; Total = %d\r\n", temp, total);
+
+    uint32_t tmp2 = total - temp;        
+    os_printf("Button was pressed %d Times\r\n", tmp2);
 
     // prep the data to be sent to Thingspeak    
-    uint8_t data[100] = "GET /update?api_key=4U8GOF201NG3X7WM&field1=0000\r\n\r\n"; //at 43, 0 offset
+    uint8_t data[100] = "GET /update?api_key=4U8GOF201NG3X7WM&field1=0000\r\n\r\n";
 
-    // input sanitizing
-    if (drop_copy < 0) drop_copy = 0;
-    if(drop_copy > 9999) drop_copy = 9999;
+    if (total != 0 && total == temp){
+        // send data
+        os_printf("Sending Data\r\n");
 
-    // Move along, no stupid integer injections to see here...
-    data[44] = (drop_copy / 1000) + 48; // get the thousands place then offset by zer0 in unicode
-    drop_copy = drop_copy % 1000;       // drop the thousands place
-    data[45] = (drop_copy / 100) + 48;  // get the hundreds place then offset by zero in unicode
-    drop_copy = drop_copy % 100;        // drop the hundreds place
-    data[46] = (drop_copy / 10) + 48;   // get the tens place then offset by zero in unicode
-    drop_copy = drop_copy % 10;         // drop the tens place
-    data[47] =  drop_copy + 48;         // only the ones remain, offset and put them in.
+        // swap these lines between button and flow meter.        
+        // uint32_t drop_copy = total / 100;
+        uint32_t drop_copy = total;
+
+        // input sanitizing
+        if (drop_copy < 0) drop_copy = 0;
+        if(drop_copy > 9999) drop_copy = 9999;
+
+        // Load the data
+        data[44] = (drop_copy / 1000) + 48; // get the thousands place then offset by zer0 in   unicode
+        drop_copy = drop_copy % 1000;       // drop the thousands place
+        data[45] = (drop_copy / 100) + 48;  // get the hundreds place then offset by zero in    unicode
+        drop_copy = drop_copy % 100;        // drop the hundreds place
+        data[46] = (drop_copy / 10) + 48;   // get the tens place then offset by zero in unicode
+        drop_copy = drop_copy % 10;         // drop the tens place
+        data[47] =  drop_copy + 48;         // only the ones remain, offset and put them in.
+    
+        // Send the data
+        espconn_sent(&global_tcp_connect, data, 100);
+        os_printf(data);
+
+        // reset the total        
+        total = 0;
+    } else if (total == 0) {
+        // total is 0 and there is nothing worth sending
+        os_printf("Nothing to be sent\r\n");
+    } else if (total != temp){
+        // or total has changed and there may be more data to send
+        os_printf("Awaiting new data\r\n");
+    }
  
     // previous attempts for prosperity's sake...
     //uint8_t data[100] = "GET /update?api_key=4U8GOF201NG3X7WM&field1=10 HTTP/1.0\r\nHost: http://api.thingspeak.com\r\n\r\n";
     //uint8_t data[20] = "https://api.thingspeak.com/update?api_key=4U8GOF201NG3X7WM%20&field1=8"
-    
-    espconn_sent(&global_tcp_connect, data, 100);
-    os_printf(data);
-    
 }
 
 /* Do nothing function */
