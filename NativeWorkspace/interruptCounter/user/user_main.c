@@ -41,7 +41,7 @@ static void tcpNetworkReconCb(void *arg, sint8 err);
 static void tcpNetworkDisconCb(void *arg);
 static void init_tcp_conn(void);
 
-/* ISR to handle the 30 sec timer which sends the number of button presses to thingspeak.com */
+/* ISR to handle the 15 sec timer which sends the number of button presses to thingspeak.com */
 void uploadTimerISR(void *arg) {
 
     uint32_t temp = total;
@@ -59,11 +59,14 @@ void uploadTimerISR(void *arg) {
     os_printf("Button was pressed %d Times\r\n", tmp2);
 
     // prep the data to be sent to Thingspeak    
-    uint8_t data[100] = "GET /update?api_key=4U8GOF201NG3X7WM&field1=0000\r\n\r\n";
+    uint8_t data[100] = "GET /update?api_key=4U8GOF201NG3X7WM&field1=00000\r\n\r\n";
 
     if (total != 0 && total == temp){
         // send data
         os_printf("Sending Data\r\n");
+
+        total *= 225;
+        total /= 100;
 
         // swap these lines between button and flow meter.        
         // uint32_t drop_copy = total / 100;
@@ -71,16 +74,18 @@ void uploadTimerISR(void *arg) {
 
         // input sanitizing
         if (drop_copy < 0) drop_copy = 0;
-        if(drop_copy > 9999) drop_copy = 9999;
+        if(drop_copy > 99999) drop_copy = 99999;
 
         // Load the data
-        data[44] = (drop_copy / 1000) + 48; // get the thousands place then offset by zer0 in   unicode
+        data[44] = (drop_copy / 10000) + 48; // get the thousands place then offset by zer0 in   unicode
+        drop_copy = drop_copy % 10000;       // drop the thousands place
+        data[45] = (drop_copy / 1000) + 48; // get the thousands place then offset by zer0 in   unicode
         drop_copy = drop_copy % 1000;       // drop the thousands place
-        data[45] = (drop_copy / 100) + 48;  // get the hundreds place then offset by zero in    unicode
+        data[46] = (drop_copy / 100) + 48;  // get the hundreds place then offset by zero in    unicode
         drop_copy = drop_copy % 100;        // drop the hundreds place
-        data[46] = (drop_copy / 10) + 48;   // get the tens place then offset by zero in unicode
+        data[47] = (drop_copy / 10) + 48;   // get the tens place then offset by zero in unicode
         drop_copy = drop_copy % 10;         // drop the tens place
-        data[47] =  drop_copy + 48;         // only the ones remain, offset and put them in.
+        data[48] =  drop_copy + 48;         // only the ones remain, offset and put them in.
     
         // Send the data
         espconn_sent(&global_tcp_connect, data, 100);
@@ -130,7 +135,7 @@ void ICACHE_FLASH_ATTR user_init() {
     //Setup timer
     os_timer_disarm(&uploadTimer);
     os_timer_setfn(&uploadTimer, (os_timer_func_t *)uploadTimerISR, NULL);
-    os_timer_arm(&uploadTimer, 30000, 1); // every 30 seconds, max is 15 seconds this will change
+    os_timer_arm(&uploadTimer, 15000, 1); // every 30 seconds, max is 15 seconds this will change
     // for the IoToliet app to have a different program flow entirely with data sent as it is useful
     
     networkInit();
