@@ -13,6 +13,9 @@
 #define user_procTaskPrio        0
 #define user_procTaskQueueLen    1
 
+// Put SSID and Password in new file user_config.h
+// as this file will be ignored by Git
+
 // Network variables
 static esp_tcp global_tcp;
 static struct espconn global_tcp_connect;
