@@ -25,5 +25,8 @@
 *.hex
 # Debug files
 *.dSYM/
-#SSID and PASS
+# SSID and PASS
 *user_config.h
+# Eagle
+*.s#*
+*.b#*
