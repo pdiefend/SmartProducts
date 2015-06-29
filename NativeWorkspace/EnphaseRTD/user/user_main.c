@@ -54,6 +54,7 @@ void updateTimerISR(void *arg) {
     os_printf(data);
     os_printf("\n");
 
+    os_timer_disarm(&updateTimer);
 }
 
 /* Do nothing function */
@@ -62,8 +63,15 @@ static void ICACHE_FLASH_ATTR user_procTask(os_event_t *events) {
 }
 
 
+void ICACHE_FLASH_ATTR user_rf_pre_init() {
+    system_phy_set_rfoption(0);
+}
+
 /* User Init, code execution starts here from OS */
 void ICACHE_FLASH_ATTR user_init() {
+
+
+
     uart_init(BIT_RATE_115200, BIT_RATE_115200);                    // Init UART @ 115200 bps    
     
     ETS_GPIO_INTR_DISABLE();                                        // Disable Interrupts
@@ -73,7 +81,7 @@ void ICACHE_FLASH_ATTR user_init() {
     //Setup timer
     os_timer_disarm(&updateTimer);
     os_timer_setfn(&updateTimer, (os_timer_func_t *)updateTimerISR, NULL);
-    os_timer_arm(&updateTimer, 30000, 1); // every 30 seconds
+    os_timer_arm(&updateTimer, 10000, 1); // every 30 seconds
     
     networkInit();
     char ssid[32] = SSID;
@@ -161,7 +169,7 @@ static void ICACHE_FLASH_ATTR init_tcp_conn(void) {
     global_tcp_connect.proto.tcp->remote_ip[1]=101;
     global_tcp_connect.proto.tcp->remote_ip[2]=171;
     global_tcp_connect.proto.tcp->remote_ip[3]=58;
-    global_tcp_connect.proto.tcp->remote_port=443;
+    global_tcp_connect.proto.tcp->remote_port=443; //443 or 80
 
     // Register Callbacks
     espconn_regist_connectcb(&global_tcp_connect, tcpNetworkConnectedCb);
