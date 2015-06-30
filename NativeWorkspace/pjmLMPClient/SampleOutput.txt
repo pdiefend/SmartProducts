@@ -1,64 +1,2197 @@
-At time of running it was 20:35 and about 42 farenheit, or 278K
-
 Waiting for IP...
-ip:192.168.1.246,mask:255.255.255.0,gw:192.168.1.1
-TCP connected
-HTTP/1.1 200 OK
-Server: nginx
-Date: Sat, 14 Mar 2015 00:34:25 GMT
-Content-Type: application/json; charset=utf-8
-Content-Length: 467
-Connection: close
-X-Source: back
-Access-Control-Allow-Origin: *
-Access-Control-Allow-Credentials: true
-Access-Control-Allow-Methods: GET, POST
+add 0
+aid 1
+pm open phy_2,type:2 0 0
+cnt 
 
-{"coord":{"lon":-76.85,"lat":41.01},"sys":{"message":0.0031,"country":"US","sunrise":1426331990,"sunset":1426374786},"weather":[{"id":803,"main":"Clouds","description":"broken clouds","icon":"04n"}],"base":"cmc stations","main":{"temp":276.002,"temp_min":276.002,"temp_max":276.002,"pressure":990.22,"sea_level":1042.63,"grnd_level":990.22,"humidity":59},"wind":{"speed":3.07,"deg":180.502},"clouds":{"all":64},"dt":1426293265,"id":5201470,"name":"Milton","cod":200}
-TCP disconnect
+connected with session, channel 1
+dhcp client start...
+Waiting for IP...
+Waiting for IP...
+Waiting for IP...
+ip:134.82.134.27,mask:255.255.255.0,gw:134.82.134.254
 TCP connected
-TCP disconnect
-TCP connected
+========================================================Recieved: 235 
 HTTP/1.1 200 OK
-Server: nginx
-Date: Sat, 14 Mar 2015 00:35:48 GMT
-Content-Type: application/json; charset=utf-8
-Content-Length: 467
+Server: nginx/1.4.2
+Date: Fri, 26 Jun 2015 19:35:42 GMT
+Content-Type: text/html
+Content-Length: 43500
+Last-Modified: Fri, 26 Jun 2015 19:33:32 GMT
 Connection: close
-X-Source: redis
-Access-Control-Allow-Origin: *
-Access-Control-Allow-Credentials: true
-Access-Control-Allow-Methods: GET, POST
+ETag: "558da90c-a9ec"
+Accept-Ranges: bytes
 
-{"coord":{"lon":-76.85,"lat":41.01},"sys":{"message":0.0031,"country":"US","sunrise":1426331990,"sunset":1426374786},"weather":[{"id":803,"main":"Clouds","description":"broken clouds","icon":"04n"}],"base":"cmc stations","main":{"temp":276.002,"temp_min":276.002,"temp_max":276.002,"pressure":990.22,"sea_level":1042.63,"grnd_level":990.22,"humidity":59},"wind":{"speed":3.07,"deg":180.502},"clouds":{"all":64},"dt":1426293265,"id":5201470,"name":"Milton","cod":200}
-TCP disconnect
-TCP connected
-HTTP/1.1 200 OK
-Server: nginx
-Date: Sat, 14 Mar 2015 00:35:58 GMT
-Content-Type: application/json; charset=utf-8
-Content-Length: 467
-Connection: close
-X-Source: redis
-Access-Control-Allow-Origin: *
-Access-Control-Allow-Credentials: true
-Access-Control-Allow-Methods: GET, POST
+========================================================Recieved: 1166 
 
-{"coord":{"lon":-76.85,"lat":41.01},"sys":{"message":0.0031,"country":"US","sunrise":1426331990,"sunset":1426374786},"weather":[{"id":803,"main":"Clouds","description":"broken clouds","icon":"04n"}],"base":"cmc stations","main":{"temp":276.002,"temp_min":276.002,"temp_max":276.002,"pressure":990.22,"sea_level":1042.63,"grnd_level":990.22,"humidity":59},"wind":{"speed":3.07,"deg":180.502},"clouds":{"all":64},"dt":1426293265,"id":5201470,"name":"Milton","cod":200}
-TCP disconnect
-TCP connected
-HTTP/1.1 200 OK
-Server: nginx
-Date: Sat, 14 Mar 2015 00:36:09 GMT
-Content-Type: application/json; charset=utf-8
-Content-Length: 467
-Connection: close
-X-Source: redis
-Access-Control-Allow-Origin: *
-Access-Control-Allow-Credentials: true
-Access-Control-Allow-Methods: GET, POST
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+	<TITLE>LMP Oasis posting</TITLE>
+	<META HTTP-EQUIV="refresh" content="120">
+</HEAD>
 
-{"coord":{"lon":-76.85,"lat":41.01},"sys":{"message":0.0031,"country":"US","sunrise":1426331990,"sunset":1426374786},"weather":[{"id":803,"main":"Clouds","description":"broken clouds","icon":"04n"}],"base":"cmc stations","main":{"temp":276.002,"temp_min":276.002,"temp_max":276.002,"pressure":990.22,"sea_level":1042.63,"grnd_level":990.22,"humidity":59},"wind":{"speed":3.07,"deg":180.502},"clouds":{"all":64},"dt":1426293265,"id":5201470,"name":"Milton","cod":200}
+<BODY>
+<BR>
+<BR>
+
+<H1><CENTER>PJM Operational Data</CENTER></H1>
+<H2><CENTER>This is provided for informational purposes ONLY and should</CENTER></H2>
+<H2><CENTER>not be relied upon by any party for the actual billing values.</CENTER></H2>
+<BR>
+<BR>
+
+<!-- Error Message -->
+<BR>
+<BR>
+
+<CENTER><H2>Data Last Updated</H2></CENTER>
+
+<CENTER>
+<TABLE ALIGN="CENTER" BORDER=5 CELLPADDING=0>
+<TR>
+<TD width=350 align=center><FONT SIZE="+1"><B>Fri Jun 26 15:30:00 EDT 2015</FONT></B></TD>
+</TR>
+
+</TABLE>
+</CENTER>
+
+<BR><BR><BR>
+
+<CENTER><H2>Aggregate Locational Marginal Prices (LMP)</H2></CENTER>
+
+<CENTER>
+<TABLE ALIGN="CENTER" BORDER=5 CELLPADDING=0>
+<TR>
+	<TD width=130 align=center><B>Name</B></TD>
+	<TD width=120 align=center><B>Type</B></TD>
+	<TD width=120 align=center><B>5 Minute Weighted Avg. LMP</B></TD>
+	<TD width=180 align=center><B>Hourly Integrated LMP for Hour Ending 15</B></TD>
+</TR>
+<TR>
+    <TD>AECO</TD>
+    <TD>ZONE</TD>
+    <TD align=right>25.5========================================================Recieved: 294 
+</TD>
+    <TD align=right>25.7</TD>
+</TR>
+<TR>
+    <TD>AEP</TD>
+    <TD>ZONE</TD>
+    <TD align=right>30.2</TD>
+    <TD align=right>31.1</TD>
+</TR>
+<TR>
+    <TD>APS</TD>
+    <TD>ZONE</TD>
+    <TD align=right>30.6</TD>
+    <TD align=right>31.3</TD>
+</TR>
+<TR>
+    <TD>ATSI</TD>
+========================================================Recieved: 1400 
+    <TD>ZONE</TD>
+    <TD align=right>29.9</TD>
+    <TD align=right>30.8</TD>
+</TR>
+<TR>
+    <TD>BGE</TD>
+    <TD>ZONE</TD>
+    <TD align=right>39.5</TD>
+    <TD align=right>40.8</TD>
+</TR>
+<TR>
+    <TD>COMED</TD>
+    <TD>ZONE</TD>
+    <TD align=right>29.0</TD>
+    <TD align=right>30.1</TD>
+</TR>
+<TR>
+    <TD>DAY</TD>
+    <TD>ZONE</TD>
+    <TD align=right>31.0</TD>
+    <TD align=right>32.1</TD>
+</TR>
+<TR>
+    <TD>DEOK</TD>
+    <TD>ZONE</TD>
+    <TD align=right>29.8</TD>
+    <TD align=right>30.8</TD>
+</TR>
+<TR>
+    <TD>DOM</TD>
+    <TD>ZONE</TD>
+    <TD align=right>33.1</TD>
+    <TD align=right>34.0</TD>
+</TR>
+<TR>
+    <TD>DPL</TD>
+    <TD>ZONE</TD>
+    <TD align=right>25.4</TD>
+    <TD align=right>25.6</TD>
+</TR>
+<TR>
+    <TD>DUQ</TD>
+    <TD>ZONE</TD>
+    <TD align=right>29.2</TD>
+    <TD align=right>30.0</TD>
+</TR>
+<TR>
+    <TD>EKPC</TD>
+    <TD>ZONE</TD>
+    <TD align=right>30.0</TD>
+    <TD align=right>31.0</TD>
+</TR>
+<TR>
+    <TD>JCPL</TD>
+    <TD>ZONE</TD>
+    <TD align=right>25.5</TD>
+    <TD align=right>25.9</TD>
+</TR>
+<TR>
+    <TD>METED</TD>
+    <TD>ZONE</TD>
+    <TD align=right>24.4</TD>
+    <TD align=right>24.6</TD>
+</TR>
+<TR>
+    <TD>PECO</TD>
+    <TD>ZONE</TD>
+    <TD align=right>24.8</TD>
+    <TD align=right>25.0</TD>
+</TR>
+<TR>
+    <TD>PENELEC</TD>
+    <TD>ZONE</TD>
+    <TD align=right>27.8<========================================================Recieved: 60 
+/TD>
+    <TD align=right>28.5</TD>
+</TR>
+<TR>
+    <TD>PE========================================================Recieved: 1400 
+PCO</TD>
+    <TD>ZONE</TD>
+    <TD align=right>35.3</TD>
+    <TD align=right>36.3</TD>
+</TR>
+<TR>
+    <TD>PPL</TD>
+    <TD>ZONE</TD>
+    <TD align=right>24.7</TD>
+    <TD align=right>25.0</TD>
+</TR>
+<TR>
+    <TD>PSEG</TD>
+    <TD>ZONE</TD>
+    <TD align=right>25.6</TD>
+    <TD align=right>26.0</TD>
+</TR>
+<TR>
+    <TD>RECO</TD>
+    <TD>ZONE</TD>
+    <TD align=right>26.2</TD>
+    <TD align=right>26.6</TD>
+</TR>
+<TR>
+    <TD>CPLEEXP</TD>
+    <TD>INTERFACE</TD>
+    <TD align=right>31.6</TD>
+    <TD align=right>32.5</TD>
+</TR>
+<TR>
+    <TD>CPLEIMP</TD>
+    <TD>INTERFACE</TD>
+    <TD align=right>31.1</TD>
+    <TD align=right>32.0</TD>
+</TR>
+<TR>
+    <TD>DUKEXP</TD>
+    <TD>INTERFACE</TD>
+    <TD align=right>31.0</TD>
+    <TD align=right>31.9</TD>
+</TR>
+<TR>
+    <TD>DUKIMP</TD>
+    <TD>INTERFACE</TD>
+    <TD align=right>30.7</TD>
+    <TD align=right>31.6</TD>
+</TR>
+<TR>
+    <TD>HUDSONTP</TD>
+    <TD>INTERFACE</TD>
+    <TD align=right>26.7</TD>
+    <TD align=right>27.1</TD>
+</TR>
+<TR>
+    <TD>IMO</TD>
+    <TD>INTERFACE</TD>
+    <TD align=right>27.3</TD>
+    <TD align=right>28.2</TD>
+</TR>
+<TR>
+    <TD>LINDENVFT</TD>
+    <TD>INTERFACE</TD>
+    <TD align=right>25.7</TD>
+    <TD align=right>26.2</TD>
+</TR>
+<TR>
+    <TD>MISO</TD>
+    <TD>INTERFACE</TD>
+    <TD align=right>28.8</TD>
+    <TD align=right>29.9</TD>
+</TR>
+<T========================================================Recieved: 60 
+R>
+    <TD>NCMPAEXP</TD>
+    <TD>INTERFACE</TD>
+    <TD a========================================================Recieved: 1400 
+lign=right>30.9</TD>
+    <TD align=right>31.8</TD>
+</TR>
+<TR>
+    <TD>NCMPAIMP</TD>
+    <TD>INTERFACE</TD>
+    <TD align=right>30.9</TD>
+    <TD align=right>31.8</TD>
+</TR>
+<TR>
+    <TD>NEPTUNE</TD>
+    <TD>INTERFACE</TD>
+    <TD align=right>25.6</TD>
+    <TD align=right>26.0</TD>
+</TR>
+<TR>
+    <TD>NIPSCO</TD>
+    <TD>INTERFACE</TD>
+    <TD align=right>29.0</TD>
+    <TD align=right>30.1</TD>
+</TR>
+<TR>
+    <TD>NORTHWEST</TD>
+    <TD>INTERFACE</TD>
+    <TD align=right>28.4</TD>
+    <TD align=right>29.4</TD>
+</TR>
+<TR>
+    <TD>NYIS</TD>
+    <TD>INTERFACE</TD>
+    <TD align=right>26.3</TD>
+    <TD align=right>26.9</TD>
+</TR>
+<TR>
+    <TD>OVEC</TD>
+    <TD>INTERFACE</TD>
+    <TD align=right>29.1</TD>
+    <TD align=right>30.1</TD>
+</TR>
+<TR>
+    <TD>SOUTHEXP</TD>
+    <TD>INTERFACE</TD>
+    <TD align=right>30.0</TD>
+    <TD align=right>31.0</TD>
+</TR>
+<TR>
+    <TD>SOUTHIMP</TD>
+    <TD>INTERFACE</TD>
+    <TD align=right>30.0</TD>
+    <TD align=right>31.0</TD>
+</TR>
+<TR>
+    <TD>AEC - AP</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>28.9</TD>
+    <TD align=right>29.6</TD>
+</TR>
+<TR>
+    <TD>AEC - JC</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>26.3</TD>
+    <TD align=right>26.7</TD>
+</TR>
+<TR>
+    <TD>AEC - ME</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>24.3</TD>
+    <TD align=right>24.4</TD>
+</TR>
+<TR>
+  ========================================================Recieved: 60 
+  <TD>AEC - PN</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=r========================================================Recieved: 1400 
+ight>27.8</TD>
+    <TD align=right>28.4</TD>
+</TR>
+<TR>
+    <TD>AELC</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>28.9</TD>
+    <TD align=right>30.0</TD>
+</TR>
+<TR>
+    <TD>AEP W.O. MON POWER</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>30.2</TD>
+    <TD align=right>31.1</TD>
+</TR>
+<TR>
+    <TD>AEPOHIO W.O. MON POWER</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>30.0</TD>
+    <TD align=right>31.0</TD>
+</TR>
+<TR>
+    <TD>AK STEEL</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>28.7</TD>
+    <TD align=right>29.7</TD>
+</TR>
+<TR>
+    <TD>AMP-ATSI</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>29.7</TD>
+    <TD align=right>30.6</TD>
+</TR>
+<TR>
+    <TD>AMP-ATSI OH</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>29.8</TD>
+    <TD align=right>30.7</TD>
+</TR>
+<TR>
+    <TD>AMP-ATSI PA</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>29.2</TD>
+    <TD align=right>29.9</TD>
+</TR>
+<TR>
+    <TD>AMP-METED</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>23.5</TD>
+    <TD align=right>23.7</TD>
+</TR>
+<TR>
+    <TD>AMP-OHIO</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>30.2</TD>
+    <TD align=right>31.2</TD>
+</TR>
+<TR>
+    <TD>AURORA CT 1-4</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>28.9</TD>
+    <TD align=right>29.9</TD>
+</TR>
+<TR>
+    <TD>BATAVIA</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>28.9</TD>
+    <TD ali========================================================Recieved: 60 
+gn=right>30.0</TD>
+</TR>
+<TR>
+    <TD>BATH COUNTY GEN</TD========================================================Recieved: 1400 
+>
+    <TD>AGGREGATE</TD>
+    <TD align=right>31.2</TD>
+    <TD align=right>32.0</TD>
+</TR>
+<TR>
+    <TD>BAYONNE TECH</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>26.0</TD>
+    <TD align=right>26.4</TD>
+</TR>
+<TR>
+    <TD>BAYVIEW</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>28.9</TD>
+    <TD align=right>29.3</TD>
+</TR>
+<TR>
+    <TD>BERLIN DPL</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>26.5</TD>
+    <TD align=right>26.7</TD>
+</TR>
+<TR>
+    <TD>BLAKELY BORO</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>25.4</TD>
+    <TD align=right>25.8</TD>
+</TR>
+<TR>
+    <TD>BLUE RIDGE</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>31.4</TD>
+    <TD align=right>32.2</TD>
+</TR>
+<TR>
+    <TD>BRANDONSH</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>41.6</TD>
+    <TD align=right>43.1</TD>
+</TR>
+<TR>
+    <TD>BRUNSWICK</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>25.4</TD>
+    <TD align=right>25.8</TD>
+</TR>
+<TR>
+    <TD>BUCK-CIN</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>30.0</TD>
+    <TD align=right>31.0</TD>
+</TR>
+<TR>
+    <TD>BUCK-FE</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>30.0</TD>
+    <TD align=right>31.0</TD>
+</TR>
+<TR>
+    <TD>BUCKEYE - AEP</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>30.3</TD>
+    <TD align=right>31.3</TD>
+</TR>
+<TR>
+    <TD>BUCKEYE - DPL</TD>
+    <TD>AGGREGATE</TD>
+    <TD a========================================================Recieved: 60 
+lign=right>31.0</TD>
+    <TD align=right>32.2</TD>
+</TR>
+========================================================Recieved: 1400 
+<TR>
+    <TD>BUCKEYE - WEC</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>29.2</TD>
+    <TD align=right>30.1</TD>
+</TR>
+<TR>
+    <TD>CAMDEN TECH</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>24.7</TD>
+    <TD align=right>25.0</TD>
+</TR>
+<TR>
+    <TD>CATAWISSA</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>24.2</TD>
+    <TD align=right>24.5</TD>
+</TR>
+<TR>
+    <TD>CHAMBERS CCLP</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>24.6</TD>
+    <TD align=right>24.8</TD>
+</TR>
+<TR>
+    <TD>CITIZENS</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>25.0</TD>
+    <TD align=right>25.4</TD>
+</TR>
+<TR>
+    <TD>CLINCH RIVER 1-3</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>29.6</TD>
+    <TD align=right>30.5</TD>
+</TR>
+<TR>
+    <TD>CONOWINGO GEN 1-11</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>22.8</TD>
+    <TD align=right>22.6</TD>
+</TR>
+<TR>
+    <TD>COOKSTOWN</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>25.1</TD>
+    <TD align=right>25.4</TD>
+</TR>
+<TR>
+    <TD>CORDOVA</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>28.0</TD>
+    <TD align=right>28.9</TD>
+</TR>
+<TR>
+    <TD>CPP</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>29.9</TD>
+    <TD align=right>30.7</TD>
+</TR>
+<TR>
+    <TD>CRISFIELD</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>27.4</TD>
+    <TD align=right>27.6</TD>
+</TR>
+<TR>
+    <TD>DECAM COAL GEN</========================================================Recieved: 60 
+TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>28.9</TD>
+========================================================Recieved: 1400 
+    <TD align=right>29.9</TD>
+</TR>
+<TR>
+    <TD>DECAM GAS GEN</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>29.2</TD>
+    <TD align=right>30.0</TD>
+</TR>
+<TR>
+    <TD>DEK</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>29.6</TD>
+    <TD align=right>30.6</TD>
+</TR>
+<TR>
+    <TD>DELI</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>27.9</TD>
+    <TD align=right>28.9</TD>
+</TR>
+<TR>
+    <TD>DEMEC</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>24.9</TD>
+    <TD align=right>25.1</TD>
+</TR>
+<TR>
+    <TD>DENAWASH</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>29.2</TD>
+    <TD align=right>30.0</TD>
+</TR>
+<TR>
+    <TD>DOVER</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>24.8</TD>
+    <TD align=right>25.0</TD>
+</TR>
+<TR>
+    <TD>DPL NORTH</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>24.3</TD>
+    <TD align=right>24.5</TD>
+</TR>
+<TR>
+    <TD>DPL SOUTH</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>26.3</TD>
+    <TD align=right>26.5</TD>
+</TR>
+<TR>
+    <TD>DPL_ODEC</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>26.5</TD>
+    <TD align=right>26.7</TD>
+</TR>
+<TR>
+    <TD>DRESDEN CC</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>28.0</TD>
+    <TD align=right>28.9</TD>
+</TR>
+<TR>
+    <TD>DUNCANNON</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>24.8</TD>
+    <TD align=right>25.2</TD>
+</TR>
+<TR>
+    <TD>EAGLE POINT========================================================Recieved: 60 
+</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>24.7</TD>========================================================Recieved: 1400 
+
+    <TD align=right>24.9</TD>
+</TR>
+<TR>
+    <TD>EAST BEND 2</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>29.0</TD>
+    <TD align=right>30.1</TD>
+</TR>
+<TR>
+    <TD>EASTON</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>25.9</TD>
+    <TD align=right>26.1</TD>
+</TR>
+<TR>
+    <TD>ECRRF</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>26.0</TD>
+    <TD align=right>26.5</TD>
+</TR>
+<TR>
+    <TD>EKPC-DEOK LOAD</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>29.8</TD>
+    <TD align=right>30.9</TD>
+</TR>
+<TR>
+    <TD>ELGIN EC3</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>29.0</TD>
+    <TD align=right>30.0</TD>
+</TR>
+<TR>
+    <TD>ELIZABETHTOWN</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>31.4</TD>
+    <TD align=right>32.2</TD>
+</TR>
+<TR>
+    <TD>EPHRATA</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>23.8</TD>
+    <TD align=right>23.9</TD>
+</TR>
+<TR>
+    <TD>FAIRLAWN</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>26.0</TD>
+    <TD align=right>26.4</TD>
+</TR>
+<TR>
+    <TD>FE GEN</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>28.9</TD>
+    <TD align=right>29.7</TD>
+</TR>
+<TR>
+    <TD>FE OHIO</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>29.8</TD>
+    <TD align=right>30.7</TD>
+</TR>
+<TR>
+    <TD>FRONT ROYAL - AP</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>32.1</TD>
+    <TD align=right>32.9</TD>
+</TR>
+<TR>========================================================Recieved: 60 
+
+    <TD>GENEVA</TD>
+    <TD>AGGREGATE</TD>
+    <TD align========================================================Recieved: 1400 
+=right>29.0</TD>
+    <TD align=right>30.0</TD>
+</TR>
+<TR>
+    <TD>GIRARD</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>28.7</TD>
+    <TD align=right>29.5</TD>
+</TR>
+<TR>
+    <TD>GOLDSBORO</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>23.8</TD>
+    <TD align=right>23.9</TD>
+</TR>
+<TR>
+    <TD>GORSUCH</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>29.2</TD>
+    <TD align=right>30.1</TD>
+</TR>
+<TR>
+    <TD>GRAND POINT</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>34.3</TD>
+    <TD align=right>35.2</TD>
+</TR>
+<TR>
+    <TD>GRANDPOINT T1</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>34.3</TD>
+    <TD align=right>35.2</TD>
+</TR>
+<TR>
+    <TD>GREENUP</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>30.0</TD>
+    <TD align=right>31.0</TD>
+</TR>
+<TR>
+    <TD>HAGERSTOWN - AP</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>33.7</TD>
+    <TD align=right>34.6</TD>
+</TR>
+<TR>
+    <TD>HANDSOME LAKE</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>28.1</TD>
+    <TD align=right>28.8</TD>
+</TR>
+<TR>
+    <TD>HATFIELD - PL</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>24.9</TD>
+    <TD align=right>25.2</TD>
+</TR>
+<TR>
+    <TD>HAZLETON 1-4</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>25.0</TD>
+    <TD align=right>25.3</TD>
+</TR>
+<TR>
+    <TD>HAZLETON 2-3</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>25.0</TD>
+    <TD al========================================================Recieved: 60 
+ign=right>25.3</TD>
+</TR>
+<TR>
+    <TD>HAZLETON 3-4</TD>========================================================Recieved: 1400 
+
+    <TD>AGGREGATE</TD>
+    <TD align=right>25.0</TD>
+    <TD align=right>25.3</TD>
+</TR>
+<TR>
+    <TD>HILLSDALE_PARKRIDGE</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>26.0</TD>
+    <TD align=right>26.4</TD>
+</TR>
+<TR>
+    <TD>HOMERCIT</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>27.1</TD>
+    <TD align=right>27.7</TD>
+</TR>
+<TR>
+    <TD>HOMERCIT UNIT1</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>27.0</TD>
+    <TD align=right>27.6</TD>
+</TR>
+<TR>
+    <TD>HOMERCIT UNIT2</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>27.2</TD>
+    <TD align=right>27.8</TD>
+</TR>
+<TR>
+    <TD>HOMERCIT UNIT3</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>27.2</TD>
+    <TD align=right>27.8</TD>
+</TR>
+<TR>
+    <TD>HREA - AP</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>30.4</TD>
+    <TD align=right>31.2</TD>
+</TR>
+<TR>
+    <TD>HUDSON BC</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>26.1</TD>
+    <TD align=right>26.6</TD>
+</TR>
+<TR>
+    <TD>HUDSON-LINDEN ABC</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>25.9</TD>
+    <TD align=right>26.3</TD>
+</TR>
+<TR>
+    <TD>IRONWOOD</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>23.5</TD>
+    <TD align=right>23.7</TD>
+</TR>
+<TR>
+    <TD>JOLIET 7</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>28.8</TD>
+    <TD align=right>29.9</TD>
+</TR>
+<TR>
+    <TD>KENDALL 1-2</TD>
+    <TD>AGGREG========================================================Recieved: 60 
+ATE</TD>
+    <TD align=right>28.7</TD>
+    <TD align=right========================================================Recieved: 1400 
+>29.8</TD>
+</TR>
+<TR>
+    <TD>KENDALL 3 CC</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>28.7</TD>
+    <TD align=right>29.8</TD>
+</TR>
+<TR>
+    <TD>KENDALL CT3</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>28.7</TD>
+    <TD align=right>29.8</TD>
+</TR>
+<TR>
+    <TD>KITTATNY 230</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>25.3</TD>
+    <TD align=right>25.6</TD>
+</TR>
+<TR>
+    <TD>LANSDALE</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>24.9</TD>
+    <TD align=right>25.2</TD>
+</TR>
+<TR>
+    <TD>LEHIGHTON</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>25.1</TD>
+    <TD align=right>25.5</TD>
+</TR>
+<TR>
+    <TD>LEWES DPL</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>26.2</TD>
+    <TD align=right>26.4</TD>
+</TR>
+<TR>
+    <TD>LIBERTY</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>24.6</TD>
+    <TD align=right>24.8</TD>
+</TR>
+<TR>
+    <TD>LIDA - AP</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>34.2</TD>
+    <TD align=right>35.1</TD>
+</TR>
+<TR>
+    <TD>LINDEN A</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>25.6</TD>
+    <TD align=right>26.1</TD>
+</TR>
+<TR>
+    <TD>LUMBERTON</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>31.4</TD>
+    <TD align=right>32.2</TD>
+</TR>
+<TR>
+    <TD>MADISON</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>29.6</TD>
+    <TD align=right>30.6</TD>
+</TR>
+<TR>
+    <TD>MANITOU</TD>========================================================Recieved: 60 
+
+    <TD>AGGREGATE</TD>
+    <TD align=right>25.1</TD>
+   ========================================================Recieved: 1400 
+ <TD align=right>25.4</TD>
+</TR>
+<TR>
+    <TD>MARION</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>26.0</TD>
+    <TD align=right>26.5</TD>
+</TR>
+<TR>
+    <TD>MERIDIAN EWHITLEY</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>29.6</TD>
+    <TD align=right>30.6</TD>
+</TR>
+<TR>
+    <TD>MEYERSDALE WF</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>28.5</TD>
+    <TD align=right>29.1</TD>
+</TR>
+<TR>
+    <TD>MICHFE</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>29.5</TD>
+    <TD align=right>30.5</TD>
+</TR>
+<TR>
+    <TD>MIDDLETOWN</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>23.5</TD>
+    <TD align=right>23.7</TD>
+</TR>
+<TR>
+    <TD>MIFFLINBURG</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>25.8</TD>
+    <TD align=right>26.2</TD>
+</TR>
+<TR>
+    <TD>MISO (PRE-ATSI)</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>28.7</TD>
+    <TD align=right>29.7</TD>
+</TR>
+<TR>
+    <TD>MITCHELL 1</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>29.2</TD>
+    <TD align=right>30.0</TD>
+</TR>
+<TR>
+    <TD>MON POWER</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>29.2</TD>
+    <TD align=right>30.1</TD>
+</TR>
+<TR>
+    <TD>MONT ALTO - AP</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>33.9</TD>
+    <TD align=right>34.8</TD>
+</TR>
+<TR>
+    <TD>MONTVILLE</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>25.7</TD>
+    <TD align=right>26.1</TD>========================================================Recieved: 60 
+
+</TR>
+<TR>
+    <TD>MOTIVA</TD>
+    <TD>AGGREGATE</TD>
+========================================================Recieved: 1400 
+    <TD align=right>24.1</TD>
+    <TD align=right>24.3</TD>
+</TR>
+<TR>
+    <TD>MUDDY RUN</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>24.0</TD>
+    <TD align=right>24.2</TD>
+</TR>
+<TR>
+    <TD>NAAMANS</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>24.4</TD>
+    <TD align=right>24.7</TD>
+</TR>
+<TR>
+    <TD>NAPERVILLE</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>28.9</TD>
+    <TD align=right>30.0</TD>
+</TR>
+<TR>
+    <TD>NEW CASTLE DIESEL</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>29.3</TD>
+    <TD align=right>30.0</TD>
+</TR>
+<TR>
+    <TD>NEWARK BAY</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>26.0</TD>
+    <TD align=right>26.5</TD>
+</TR>
+<TR>
+    <TD>NEWCHURCH CT1-2</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>27.2</TD>
+    <TD align=right>27.5</TD>
+</TR>
+<TR>
+    <TD>NEWMARTINSVILLE-AP</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>30.0</TD>
+    <TD align=right>30.9</TD>
+</TR>
+<TR>
+    <TD>NLEBNON</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>24.4</TD>
+    <TD align=right>24.6</TD>
+</TR>
+<TR>
+    <TD>OCCIDENTAL</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>24.1</TD>
+    <TD align=right>24.3</TD>
+</TR>
+<TR>
+    <TD>OLYPHANT</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>25.4</TD>
+    <TD align=right>25.8</TD>
+</TR>
+<TR>
+    <TD>ONTARIO</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>28.3</TD========================================================Recieved: 60 
+>
+    <TD align=right>29.2</TD>
+</TR>
+<TR>
+    <TD>ONTEL========================================================Recieved: 1400 
+AUNEE</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>24.0</TD>
+    <TD align=right>24.2</TD>
+</TR>
+<TR>
+    <TD>PAINESVILLE</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>30.4</TD>
+    <TD align=right>31.3</TD>
+</TR>
+<TR>
+    <TD>PENN POWER</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>29.2</TD>
+    <TD align=right>29.9</TD>
+</TR>
+<TR>
+    <TD>PENNTECH</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>27.8</TD>
+    <TD align=right>28.5</TD>
+</TR>
+<TR>
+    <TD>PEPCO DC</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>35.5</TD>
+    <TD align=right>36.5</TD>
+</TR>
+<TR>
+    <TD>PEPCO MD</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>35.3</TD>
+    <TD align=right>36.3</TD>
+</TR>
+<TR>
+    <TD>PEPCO SMECO</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>35.1</TD>
+    <TD align=right>36.2</TD>
+</TR>
+<TR>
+    <TD>PERKASIE</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>24.9</TD>
+    <TD align=right>25.2</TD>
+</TR>
+<TR>
+    <TD>PERRYMAN 1-2</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>57.0</TD>
+    <TD align=right>59.6</TD>
+</TR>
+<TR>
+    <TD>PERRYMAN 3-4</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>57.0</TD>
+    <TD align=right>59.6</TD>
+</TR>
+<TR>
+    <TD>PHILIPPI - AP</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>30.2</TD>
+    <TD align=right>31.0</TD>
+</TR>
+<TR>
+    <TD>POTTSTOWN NUG</TD>
+    <TD>AGGREGATE</T========================================================Recieved: 60 
+D>
+    <TD align=right>25.7</TD>
+    <TD align=right>25.9<========================================================Recieved: 1340 
+/TD>
+</TR>
+<TR>
+    <TD>PPL_ALLUGI</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>25.6</TD>
+    <TD align=right>26.0</TD>
+</TR>
+<TR>
+    <TD>QUAKERTOWN</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>24.9</TD>
+    <TD align=right>25.2</TD>
+</TR>
+<TR>
+    <TD>REDOAK CC</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>25.3</TD>
+    <TD align=right>25.7</TD>
+</TR>
+<TR>
+    <TD>RICHMOND</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>30.1</TD>
+    <TD align=right>31.2</TD>
+</TR>
+<TR>
+    <TD>RIVER</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>29.2</TD>
+    <TD align=right>30.3</TD>
+</TR>
+<TR>
+    <TD>ROCHELLE</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>28.6</TD>
+    <TD align=right>29.8</TD>
+</TR>
+<TR>
+    <TD>ROCK FALLS</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>27.8</TD>
+    <TD align=right>28.8</TD>
+</TR>
+<TR>
+    <TD>ROCKFORD</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>28.3</TD>
+    <TD align=right>29.3</TD>
+</TR>
+<TR>
+    <TD>RTEP B0287 SOURCE</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>24.0</TD>
+    <TD align=right>24.3</TD>
+</TR>
+<TR>
+    <TD>RTEP B0328 SOURCE</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>30.5</TD>
+    <TD align=right>31.3</TD>
+</TR>
+<TR>
+    <TD>RTEP B0329 SOURCE</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>32.========================================================Recieved: 60 
+4</TD>
+    <TD align=right>33.2</TD>
+</TR>
+<TR>
+    <TD>========================================================Recieved: 60 
+SCHUYLKILL HAVEN</TD>
+    <TD>AGGREGATE</TD>
+    <TD align========================================================Recieved: 1400 
+=right>24.4</TD>
+    <TD align=right>24.8</TD>
+</TR>
+<TR>
+    <TD>SENECA</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>27.3</TD>
+    <TD align=right>28.3</TD>
+</TR>
+<TR>
+    <TD>SOUTH BEND 1-4</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>27.4</TD>
+    <TD align=right>27.9</TD>
+</TR>
+<TR>
+    <TD>SOUTHEAST</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>31.5</TD>
+    <TD align=right>32.4</TD>
+</TR>
+<TR>
+    <TD>SOUTHEAST (PRE-DOM)</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>31.6</TD>
+    <TD align=right>32.4</TD>
+</TR>
+<TR>
+    <TD>SOUTHRIV 230</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>25.4</TD>
+    <TD align=right>25.8</TD>
+</TR>
+<TR>
+    <TD>SOUTHWEST</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>29.4</TD>
+    <TD align=right>30.4</TD>
+</TR>
+<TR>
+    <TD>ST CLAIR</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>24.4</TD>
+    <TD align=right>24.8</TD>
+</TR>
+<TR>
+    <TD>ST. CHARLES</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>29.0</TD>
+    <TD align=right>30.0</TD>
+</TR>
+<TR>
+    <TD>SULLIVAN</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>24.2</TD>
+    <TD align=right>24.6</TD>
+</TR>
+<TR>
+    <TD>SUNBURY 1-3</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>25.0</TD>
+    <TD align=right>25.3</TD>
+</TR>
+<TR>
+    <TD>SUNBURY BUS1E</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>25.0</TD>
+    <TD ========================================================Recieved: 60 
+align=right>25.3</TD>
+</TR>
+<TR>
+    <TD>SUNBURY BUS1W</T========================================================Recieved: 1400 
+D>
+    <TD>AGGREGATE</TD>
+    <TD align=right>25.0</TD>
+    <TD align=right>25.3</TD>
+</TR>
+<TR>
+    <TD>SUNBURY BUS2E</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>25.0</TD>
+    <TD align=right>25.3</TD>
+</TR>
+<TR>
+    <TD>SUNBURY BUS2W</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>25.0</TD>
+    <TD align=right>25.3</TD>
+</TR>
+<TR>
+    <TD>SUNBURY LBRG</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>25.0</TD>
+    <TD align=right>25.4</TD>
+</TR>
+<TR>
+    <TD>SUNOIL</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>24.6</TD>
+    <TD align=right>24.8</TD>
+</TR>
+<TR>
+    <TD>TANSBORO AE</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>24.8</TD>
+    <TD align=right>25.1</TD>
+</TR>
+<TR>
+    <TD>TARENTUM - AP</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>28.0</TD>
+    <TD align=right>28.6</TD>
+</TR>
+<TR>
+    <TD>TEMPLEU</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>25.0</TD>
+    <TD align=right>25.3</TD>
+</TR>
+<TR>
+    <TD>THURMONT - AP</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>34.1</TD>
+    <TD align=right>35.0</TD>
+</TR>
+<TR>
+    <TD>TOSCO LOAD BUS</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>25.7</TD>
+    <TD align=right>26.1</TD>
+</TR>
+<TR>
+    <TD>TRAYNOR</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>25.7</TD>
+    <TD align=right>26.1</TD>
+</TR>
+<TR>
+    <TD>TRI-COUNTY</TD>
+    <TD>AGGREGATE</TD>========================================================Recieved: 60 
+
+    <TD align=right>26.7</TD>
+    <TD align=right>27.0</TD========================================================Recieved: 1400 
+>
+</TR>
+<TR>
+    <TD>UGI</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>25.6</TD>
+    <TD align=right>26.0</TD>
+</TR>
+<TR>
+    <TD>VINELAND</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>25.4</TD>
+    <TD align=right>25.7</TD>
+</TR>
+<TR>
+    <TD>VP KERR DAM 1-7</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>31.6</TD>
+    <TD align=right>32.4</TD>
+</TR>
+<TR>
+    <TD>WALDWICK JK</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>25.9</TD>
+    <TD align=right>26.3</TD>
+</TR>
+<TR>
+    <TD>WARREN COUNTY CC</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>32.0</TD>
+    <TD align=right>32.8</TD>
+</TR>
+<TR>
+    <TD>WATERFORD CC</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>28.3</TD>
+    <TD align=right>29.2</TD>
+</TR>
+<TR>
+    <TD>WATSONTOWN</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>24.2</TD>
+    <TD align=right>24.6</TD>
+</TR>
+<TR>
+    <TD>WEATHERLY</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>24.9</TD>
+    <TD align=right>25.3</TD>
+</TR>
+<TR>
+    <TD>WELLSBORO</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>28.4</TD>
+    <TD align=right>29.2</TD>
+</TR>
+<TR>
+    <TD>WESTVACO</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>31.0</TD>
+    <TD align=right>31.7</TD>
+</TR>
+<TR>
+    <TD>WILLIAMSPORT - AP</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>33.5</TD>
+    <TD align=right>34.4</TD>
+</TR>
+<TR>
+    <TD>WILL========================================================Recieved: 60 
+IAMSTOWN</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>2========================================================Recieved: 1400 
+9.6</TD>
+    <TD align=right>30.7</TD>
+</TR>
+<TR>
+    <TD>WINNETKA</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>29.0</TD>
+    <TD align=right>30.1</TD>
+</TR>
+<TR>
+    <TD>ZION 1</TD>
+    <TD>AGGREGATE</TD>
+    <TD align=right>28.7</TD>
+    <TD align=right>29.7</TD>
+</TR>
+<TR>
+    <TD>AEP GEN HUB</TD>
+    <TD>HUB</TD>
+    <TD align=right>29.2</TD>
+    <TD align=right>30.1</TD>
+</TR>
+<TR>
+    <TD>AEP-DAYTON HUB</TD>
+    <TD>HUB</TD>
+    <TD align=right>30.0</TD>
+    <TD align=right>31.0</TD>
+</TR>
+<TR>
+    <TD>ATSI GEN HUB</TD>
+    <TD>HUB</TD>
+    <TD align=right>29.4</TD>
+    <TD align=right>30.3</TD>
+</TR>
+<TR>
+    <TD>CHICAGO GEN HUB</TD>
+    <TD>HUB</TD>
+    <TD align=right>28.7</TD>
+    <TD align=right>29.8</TD>
+</TR>
+<TR>
+    <TD>CHICAGO HUB</TD>
+    <TD>HUB</TD>
+    <TD align=right>29.1</TD>
+    <TD align=right>30.1</TD>
+</TR>
+<TR>
+    <TD>DOMINION HUB</TD>
+    <TD>HUB</TD>
+    <TD align=right>32.5</TD>
+    <TD align=right>33.4</TD>
+</TR>
+<TR>
+    <TD>EASTERN HUB</TD>
+    <TD>HUB</TD>
+    <TD align=right>25.6</TD>
+    <TD align=right>25.9</TD>
+</TR>
+<TR>
+    <TD>N ILLINOIS HUB</TD>
+    <TD>HUB</TD>
+    <TD align=right>28.9</TD>
+    <TD align=right>30.0</TD>
+</TR>
+<TR>
+    <TD>NEW JERSEY HUB</TD>
+    <TD>HUB</TD>
+    <TD align=right>25.6</TD>
+    <TD align=right>25.9</TD>
+</TR>
+<TR>
+    <TD>OHIO HUB</========================================================Recieved: 60 
+TD>
+    <TD>HUB</TD>
+    <TD align=right>30.1</TD>
+    <T========================================================Recieved: 1400 
+D align=right>31.1</TD>
+</TR>
+<TR>
+    <TD>WEST INT HUB</TD>
+    <TD>HUB</TD>
+    <TD align=right>30.3</TD>
+    <TD align=right>31.1</TD>
+</TR>
+<TR>
+    <TD>WESTERN HUB</TD>
+    <TD>HUB</TD>
+    <TD align=right>31.1</TD>
+    <TD align=right>31.9</TD>
+</TR>
+</TABLE>
+</CENTER>
+
+<BR><BR><BR>
+<BR><BR><BR>
+<BR><BR><BR>
+
+<CENTER><H2>500 KV Bus Locational Marginal Prices (LMP)</H2></CENTER>
+
+<CENTER>
+<TABLE ALIGN="CENTER" BORDER=5 CELLPADDING=0>
+<TR>
+	<TD width=150 align=center><B>Bus Name</B></TD>
+	<TD width=120 align=center><B>5 Minute LMP</B></TD>
+	<TD width=180 align=center><B>Hourly Integrated LMP for Hour Ending 15</B></TD>
+</TR>
+<TR>
+    <TD>112 WILTON</TD>
+    <TD align=right>28.8</TD>
+    <TD align=right>29.9</TD>
+</TR>
+<TR>
+    <TD>167 PLANO</TD>
+    <TD align=right>28.7</TD>
+    <TD align=right>29.8</TD>
+</TR>
+<TR>
+    <TD>23 COLLINS</TD>
+    <TD align=right>28.8</TD>
+    <TD align=right>29.8</TD>
+</TR>
+<TR>
+    <TD>502JCT</TD>
+    <TD align=right>29.6</TD>
+    <TD align=right>30.4</TD>
+</TR>
+<TR>
+    <TD>ALBURTIS</TD>
+    <TD align=right>24.9</TD>
+    <TD align=right>25.2</TD>
+</TR>
+<TR>
+    <TD>AMOS</TD>
+    <TD align=right>29.1</TD>
+    <TD align=right>30.0</TD>
+</TR>
+<TR>
+    <TD>AXTON</TD>
+    <TD align=right>30.2</TD>
+    <TD align=right>31.1</TD>
+</TR>
+<TR>
+    <TD>BAKER</TD>
+    <TD align=right>29.2<========================================================Recieved: 60 
+/TD>
+    <TD align=right>30.2</TD>
+</TR>
+<TR>
+    <TD>BA========================================================Recieved: 1400 
+TH COUNTY</TD>
+    <TD align=right>30.6</TD>
+    <TD align=right>31.4</TD>
+</TR>
+<TR>
+    <TD>BEDINGTON</TD>
+    <TD align=right>32.8</TD>
+    <TD align=right>33.7</TD>
+</TR>
+<TR>
+    <TD>BELMONT</TD>
+    <TD align=right>29.1</TD>
+    <TD align=right>30.0</TD>
+</TR>
+<TR>
+    <TD>BLACKOAK</TD>
+    <TD align=right>31.2</TD>
+    <TD align=right>32.0</TD>
+</TR>
+<TR>
+    <TD>BRANCHBURG</TD>
+    <TD align=right>25.2</TD>
+    <TD align=right>25.5</TD>
+</TR>
+<TR>
+    <TD>BRIGHTON</TD>
+    <TD align=right>34.7</TD>
+    <TD align=right>35.7</TD>
+</TR>
+<TR>
+    <TD>BRISTERS</TD>
+    <TD align=right>33.0</TD>
+    <TD align=right>33.9</TD>
+</TR>
+<TR>
+    <TD>BROADFORD</TD>
+    <TD align=right>29.9</TD>
+    <TD align=right>30.8</TD>
+</TR>
+<TR>
+    <TD>BURCHESHILL</TD>
+    <TD align=right>34.6</TD>
+    <TD align=right>35.6</TD>
+</TR>
+<TR>
+    <TD>CABOT</TD>
+    <TD align=right>27.8</TD>
+    <TD align=right>28.4</TD>
+</TR>
+<TR>
+    <TD>CALVERTC</TD>
+    <TD align=right>35.0</TD>
+    <TD align=right>36.1</TD>
+</TR>
+<TR>
+    <TD>CARSON</TD>
+    <TD align=right>32.3</TD>
+    <TD align=right>33.2</TD>
+</TR>
+<TR>
+    <TD>CHALKPT</TD>
+    <TD align=right>35.0</TD>
+    <TD align=right>36.0</TD>
+</TR>
+<TR>
+    <TD>CHANCELLOR</TD>
+    <TD align=right>32.9</TD>
+    <TD align=right>33.7</TD>
+</TR>
+<TR>
+    <TD>CHICKAHOMINY</TD>
+    <T========================================================Recieved: 60 
+D align=right>32.5</TD>
+    <TD align=right>33.3</TD>
+</TR========================================================Recieved: 1400 
+>
+<TR>
+    <TD>CLIFTON</TD>
+    <TD align=right>33.4</TD>
+    <TD align=right>34.2</TD>
+</TR>
+<TR>
+    <TD>CLOVER</TD>
+    <TD align=right>31.8</TD>
+    <TD align=right>32.6</TD>
+</TR>
+<TR>
+    <TD>CLOVERDALE</TD>
+    <TD align=right>30.4</TD>
+    <TD align=right>31.2</TD>
+</TR>
+<TR>
+    <TD>CONASTONE</TD>
+    <TD align=right>24.4</TD>
+    <TD align=right>24.6</TD>
+</TR>
+<TR>
+    <TD>CONEMAUGH</TD>
+    <TD align=right>26.5</TD>
+    <TD align=right>27.1</TD>
+</TR>
+<TR>
+    <TD>COOK</TD>
+    <TD align=right>29.1</TD>
+    <TD align=right>30.1</TD>
+</TR>
+<TR>
+    <TD>CRANBERRY</TD>
+    <TD align=right>28.2</TD>
+    <TD align=right>28.8</TD>
+</TR>
+<TR>
+    <TD>CULLODEN</TD>
+    <TD align=right>29.2</TD>
+    <TD align=right>30.1</TD>
+</TR>
+<TR>
+    <TD>CUNNINGHAM</TD>
+    <TD align=right>31.5</TD>
+    <TD align=right>32.3</TD>
+</TR>
+<TR>
+    <TD>DEANS</TD>
+    <TD align=right>25.2</TD>
+    <TD align=right>25.5</TD>
+</TR>
+<TR>
+    <TD>DOOMS</TD>
+    <TD align=right>31.1</TD>
+    <TD align=right>31.9</TD>
+</TR>
+<TR>
+    <TD>DOUBS</TD>
+    <TD align=right>33.5</TD>
+    <TD align=right>34.4</TD>
+</TR>
+<TR>
+    <TD>DUMONT</TD>
+    <TD align=right>29.1</TD>
+    <TD align=right>30.1</TD>
+</TR>
+<TR>
+    <TD>ELMONT</TD>
+    <TD align=right>32.4</TD>
+    <TD align=right>33.2</TD>
+</TR>
+<TR>
+    <TD>ELROY</TD>
+    <TD alig========================================================Recieved: 60 
+n=right>24.8</TD>
+    <TD align=right>25.1</TD>
+</TR>
+<TR========================================================Recieved: 1400 
+>
+    <TD>EWINDSOR</TD>
+    <TD align=right>25.1</TD>
+    <TD align=right>25.5</TD>
+</TR>
+<TR>
+    <TD>FENTRESS</TD>
+    <TD align=right>32.7</TD>
+    <TD align=right>33.5</TD>
+</TR>
+<TR>
+    <TD>FLATLICK</TD>
+    <TD align=right>29.1</TD>
+    <TD align=right>30.0</TD>
+</TR>
+<TR>
+    <TD>FLUVANNA</TD>
+    <TD align=right>31.5</TD>
+    <TD align=right>32.3</TD>
+</TR>
+<TR>
+    <TD>FORTMARTIN</TD>
+    <TD align=right>29.6</TD>
+    <TD align=right>30.4</TD>
+</TR>
+<TR>
+    <TD>FRONT ROYAL</TD>
+    <TD align=right>32.0</TD>
+    <TD align=right>32.9</TD>
+</TR>
+<TR>
+    <TD>GAVIN</TD>
+    <TD align=right>29.0</TD>
+    <TD align=right>29.9</TD>
+</TR>
+<TR>
+    <TD>GREENLAND GAP</TD>
+    <TD align=right>31.1</TD>
+    <TD align=right>31.9</TD>
+</TR>
+<TR>
+    <TD>HANGING ROCK</TD>
+    <TD align=right>29.1</TD>
+    <TD align=right>30.1</TD>
+</TR>
+<TR>
+    <TD>HARRISON</TD>
+    <TD align=right>29.5</TD>
+    <TD align=right>30.3</TD>
+</TR>
+<TR>
+    <TD>HATFIELD</TD>
+    <TD align=right>29.6</TD>
+    <TD align=right>30.4</TD>
+</TR>
+<TR>
+    <TD>HOPATCON</TD>
+    <TD align=right>25.5</TD>
+    <TD align=right>25.9</TD>
+</TR>
+<TR>
+    <TD>HOPECREEK</TD>
+    <TD align=right>24.3</TD>
+    <TD align=right>24.6</TD>
+</TR>
+<TR>
+    <TD>HOSENSACK</TD>
+    <TD align=right>24.8</TD>
+    <TD align=right>25.1</TD>
+</TR>
+<TR>
+    <TD>HUNT========================================================Recieved: 60 
+ERSTOWN</TD>
+    <TD align=right>24.8</TD>
+    <TD align=r========================================================Recieved: 1400 
+ight>25.1</TD>
+</TR>
+<TR>
+    <TD>JACKSONS FERRY</TD>
+    <TD align=right>30.1</TD>
+    <TD align=right>31.0</TD>
+</TR>
+<TR>
+    <TD>JEFFERSON</TD>
+    <TD align=right>29.1</TD>
+    <TD align=right>30.1</TD>
+</TR>
+<TR>
+    <TD>JOSHUA FALLS</TD>
+    <TD align=right>30.5</TD>
+    <TD align=right>31.3</TD>
+</TR>
+<TR>
+    <TD>JUNIATA</TD>
+    <TD align=right>25.2</TD>
+    <TD align=right>25.6</TD>
+</TR>
+<TR>
+    <TD>KAMMER</TD>
+    <TD align=right>29.2</TD>
+    <TD align=right>30.1</TD>
+</TR>
+<TR>
+    <TD>KEENEY</TD>
+    <TD align=right>24.3</TD>
+    <TD align=right>24.6</TD>
+</TR>
+<TR>
+    <TD>KEYSTONE</TD>
+    <TD align=right>27.3</TD>
+    <TD align=right>27.9</TD>
+</TR>
+<TR>
+    <TD>LADYSMITH</TD>
+    <TD align=right>32.8</TD>
+    <TD align=right>33.6</TD>
+</TR>
+<TR>
+    <TD>LEXINGTON</TD>
+    <TD align=right>30.8</TD>
+    <TD align=right>31.6</TD>
+</TR>
+<TR>
+    <TD>LIMERICK</TD>
+    <TD align=right>24.6</TD>
+    <TD align=right>24.8</TD>
+</TR>
+<TR>
+    <TD>LOUDOUN</TD>
+    <TD align=right>33.3</TD>
+    <TD align=right>34.1</TD>
+</TR>
+<TR>
+    <TD>MALISZEWSKI</TD>
+    <TD align=right>29.4</TD>
+    <TD align=right>30.4</TD>
+</TR>
+<TR>
+    <TD>MARQUIS</TD>
+    <TD align=right>29.2</TD>
+    <TD align=right>30.1</TD>
+</TR>
+<TR>
+    <TD>MARYSVILLE</TD>
+    <TD align=right>29.4</TD>
+    <TD align=right>30.3</TD>
+<========================================================Recieved: 60 
+/TR>
+<TR>
+    <TD>MEADOWBROOK</TD>
+    <TD align=right>32========================================================Recieved: 1340 
+.0</TD>
+    <TD align=right>32.8</TD>
+</TR>
+<TR>
+    <TD>MIDLOTHIAN</TD>
+    <TD align=right>32.4</TD>
+    <TD align=right>33.3</TD>
+</TR>
+<TR>
+    <TD>MORRISVILLE</TD>
+    <TD align=right>32.9</TD>
+    <TD align=right>33.7</TD>
+</TR>
+<TR>
+    <TD>MOUNTAINEER</TD>
+    <TD align=right>29.0</TD>
+    <TD align=right>29.9</TD>
+</TR>
+<TR>
+    <TD>MT STORM</TD>
+    <TD align=right>31.0</TD>
+    <TD align=right>31.8</TD>
+</TR>
+<TR>
+    <TD>NAGELAEP</TD>
+    <TD align=right>30.0</TD>
+    <TD align=right>30.9</TD>
+</TR>
+<TR>
+    <TD>NEWFREEDOM</TD>
+    <TD align=right>24.6</TD>
+    <TD align=right>24.8</TD>
+</TR>
+<TR>
+    <TD>NORTH ANNA</TD>
+    <TD align=right>32.7</TD>
+    <TD align=right>33.5</TD>
+</TR>
+<TR>
+    <TD>NORTH LONGVIEW</TD>
+    <TD align=right>29.6</TD>
+    <TD align=right>30.4</TD>
+</TR>
+<TR>
+    <TD>NORTH PROCTORVILLE</TD>
+    <TD align=right>29.1</TD>
+    <TD align=right>30.0</TD>
+</TR>
+<TR>
+    <TD>ORCHARD</TD>
+    <TD align=right>24.4</TD>
+    <TD align=right>24.7</TD>
+</TR>
+<TR>
+    <TD>OX</TD>
+    <TD align=right>33.4</TD>
+    <TD align=right>34.3</TD>
+</TR>
+<TR>
+    <TD>PEACHBOTTOM</TD>
+    <TD align=right>24.2</TD>
+    <TD align=right>24.5</TD>
+</TR>
+<TR>
+    <TD>PLEASANT VIEW</TD>
+    <TD align=right>33.8</TD>
+    <TD align=right>34.7</TD========================================================Recieved: 60 
+>
+</TR>
+<TR>
+    <TD>PLEASANTS</TD>
+    <TD align=right>========================================================Recieved: 60 
+29.1</TD>
+    <TD align=right>29.9</TD>
+</TR>
+<TR>
+    <========================================================Recieved: 1400 
+TD>POSSUM POINT</TD>
+    <TD align=right>33.6</TD>
+    <TD align=right>34.4</TD>
+</TR>
+<TR>
+    <TD>PRUNTYTOWN</TD>
+    <TD align=right>29.8</TD>
+    <TD align=right>30.6</TD>
+</TR>
+<TR>
+    <TD>REDLION</TD>
+    <TD align=right>24.3</TD>
+    <TD align=right>24.6</TD>
+</TR>
+<TR>
+    <TD>ROCKPORT</TD>
+    <TD align=right>28.7</TD>
+    <TD align=right>29.7</TD>
+</TR>
+<TR>
+    <TD>ROCKSPRINGS</TD>
+    <TD align=right>24.3</TD>
+    <TD align=right>24.5</TD>
+</TR>
+<TR>
+    <TD>RONCO</TD>
+    <TD align=right>29.5</TD>
+    <TD align=right>30.3</TD>
+</TR>
+<TR>
+    <TD>SALEM</TD>
+    <TD align=right>24.3</TD>
+    <TD align=right>24.6</TD>
+</TR>
+<TR>
+    <TD>SEPTA</TD>
+    <TD align=right>32.5</TD>
+    <TD align=right>33.3</TD>
+</TR>
+<TR>
+    <TD>SMITHBURG</TD>
+    <TD align=right>25.2</TD>
+    <TD align=right>25.5</TD>
+</TR>
+<TR>
+    <TD>SOUTH CANTON</TD>
+    <TD align=right>29.3</TD>
+    <TD align=right>30.1</TD>
+</TR>
+<TR>
+    <TD>SOUTHBEND</TD>
+    <TD align=right>27.4</TD>
+    <TD align=right>27.9</TD>
+</TR>
+<TR>
+    <TD>STEELCITY</TD>
+    <TD align=right>24.8</TD>
+    <TD align=right>25.1</TD>
+</TR>
+<TR>
+    <TD>SULLIVAN-AEP</TD>
+    <TD align=right>28.8</TD>
+    <TD align=right>29.8</TD>
+</TR>
+<TR>
+    <TD>SUNBURY</TD>
+    <TD align=right>25.0</TD>
+    <TD align=right>25.4</TD>
+</TR>
+<TR>
+    <TD>SURRY</TD>
+    ========================================================Recieved: 60 
+<TD align=right>32.5</TD>
+    <TD align=right>33.3</TD>
+</========================================================Recieved: 1400 
+TR>
+<TR>
+    <TD>SUSQUEHANNA</TD>
+    <TD align=right>24.8</TD>
+    <TD align=right>25.2</TD>
+</TR>
+<TR>
+    <TD>TMI</TD>
+    <TD align=right>24.6</TD>
+    <TD align=right>24.9</TD>
+</TR>
+<TR>
+    <TD>VALLEY</TD>
+    <TD align=right>31.0</TD>
+    <TD align=right>31.8</TD>
+</TR>
+<TR>
+    <TD>WAUGHCHAPEL</TD>
+    <TD align=right>35.5</TD>
+    <TD align=right>36.5</TD>
+</TR>
+<TR>
+    <TD>WESCOSVL</TD>
+    <TD align=right>24.9</TD>
+    <TD align=right>25.2</TD>
+</TR>
+<TR>
+    <TD>WHITPAIN</TD>
+    <TD align=right>24.7</TD>
+    <TD align=right>24.9</TD>
+</TR>
+<TR>
+    <TD>WYLIERIDGE</TD>
+    <TD align=right>28.6</TD>
+    <TD align=right>29.3</TD>
+</TR>
+<TR>
+    <TD>WYOMING</TD>
+    <TD align=right>29.6</TD>
+    <TD align=right>30.5</TD>
+</TR>
+<TR>
+    <TD>YADKIN</TD>
+    <TD align=right>32.7</TD>
+    <TD align=right>33.5</TD>
+</TR>
+<TR>
+    <TD>YUKON</TD>
+    <TD align=right>28.7</TD>
+    <TD align=right>29.4</TD>
+</TR>
+</TABLE>
+</CENTER>
+
+<BR><BR><BR>
+
+<CENTER><H2>PJM Transfer Interface Information (MW)</H2>
+<TABLE ALIGN="CENTER" BORDER=5>
+<TR>
+	<TD width=90 align=center><B>Interface</B></TD>
+	<TD width=100 align=center><B>Actual flow</B></TD>
+	<TD width=100 align=center><B>Warning Level</B></TD>
+	<TD width=100 align=center><B>Transfer Limit</B></TD>
+</TR>
+<TR>
+	<TD>50045005</TD>
+	<TD align=right>1321</TD>
+	<TD alig========================================================Recieved: 60 
+n=right>2762</TD>
+	<TD align=right>3157</TD>
+</TR>
+<TR>
+========================================================Recieved: 1400 
+	<TD>AEP/DOM</TD>
+	<TD align=right>3340</TD>
+	<TD align=right>4568</TD>
+	<TD align=right>4809</TD>
+</TR>
+<TR>
+	<TD>APSOUTH</TD>
+	<TD align=right>3595</TD>
+	<TD align=right>4039</TD>
+	<TD align=right>4252</TD>
+</TR>
+<TR>
+	<TD>BED-BLA</TD>
+	<TD align=right>1341</TD>
+	<TD align=right>1570</TD>
+	<TD align=right>1653</TD>
+</TR>
+<TR>
+	<TD>CENTRAL</TD>
+	<TD align=right>437</TD>
+	<TD align=right>3480</TD>
+	<TD align=right>3663</TD>
+</TR>
+<TR>
+	<TD>CLVLND</TD>
+	<TD align=right>1068</TD>
+	<TD align=right>2177</TD>
+	<TD align=right>2291</TD>
+</TR>
+<TR>
+	<TD>COMED</TD>
+	<TD align=right>-3613</TD>
+	<TD align=right>3596</TD>
+	<TD align=right>4036</TD>
+</TR>
+<TR>
+	<TD>EAST</TD>
+	<TD align=right>4033</TD>
+	<TD align=right>6619</TD>
+	<TD align=right>6968</TD>
+</TR>
+<TR>
+	<TD>WEST</TD>
+	<TD align=right>2945</TD>
+	<TD align=right>5195</TD>
+	<TD align=right>5469</TD>
+</TR>
+</TABLE>
+</CENTER>
+
+<P><CENTER>Name does not indicate direction.</CENTER>
+
+
+<BR><BR><BR>
+
+<CENTER><H2>PJM Instantaneous Dispatch Rates</H2></CENTER>
+<!--  Comes from BSP 128: Should I include this? -->
+<A TARGET="_top" HREF="http://oasis.pjm.com/drate.html" NAME="Instantaneous Dispatch Rate Page"><CENTER>PJM Dispatch Rates</CENTER></A>
+
+<BR><BR><BR>
+
+<CENTER><H2>PJM Instantaneous Load (MW)</H2></CENTER>
+
+<CENTER>
+<TABLE ALIGN="CENTER" BORDER=5>
+<TR>
+	<TD width=150========================================================Recieved: 1220 
+ align=center><B>Area</B></TD>
+	<TD width=120 align=center><B>Instantaneous Load</B></TD>
+</TR>
+<TR>
+    <TD>PJM RTO</TD>
+    <TD align=right>109562</TD>
+</TR>
+<TR>
+    <TD>PJM MID ATLANTIC REGION</TD>
+    <TD align=right>39641</TD>
+</TR>
+<TR>
+    <TD>PJM SOUTHERN REGION</TD>
+    <TD align=right>13697</TD>
+</TR>
+<TR>
+    <TD>PJM WESTERN REGION</TD>
+    <TD align=right>56223</TD>
+</TR>
+</TABLE>
+</CENTER>
+
+<P><CENTER>Loads are calculated from raw telemetry data and are approximate.</CENTER>
+<CENTER>The displayed values are NOT official PJM Loads.</CENTER>
+
+<BR><BR><BR>
+
+<P><CENTER><H2>Current PJM Transmission Limits</H2></CENTER>
+<P align=center>
+    	    Contingency
+	    	        BRIGHTON 500 KV   BRIGHTON 6AB           CB 
+	    	        BRIGHTON 500 KV   BRIGHTON 6BB           CB 
+	    	        BRIGHTON 500 KV   BRIGHTON DUM18384 
+	    	        CONASTON 500 KV   CONASTON 5011 LINE DSW 
+	    	        CONASTON 500 KV   CONASTON 5011/2-500 GCB H 
+	    	        CONASTON 500 KV   CONASTON 5011/3-500 GCB J 
+	    	        LINE     500 KV   BRIGHTON-CONASTON 5011 
+	            <br/>Monitor BAGLEY - GRACETON 2304      A  230 KV -> Redispatch<br/>
+    
+</BODY>
+</HTML>
+
 TCP disconnect
 TCP connected
 

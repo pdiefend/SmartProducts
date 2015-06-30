@@ -69,9 +69,6 @@ void ICACHE_FLASH_ATTR user_rf_pre_init() {
 
 /* User Init, code execution starts here from OS */
 void ICACHE_FLASH_ATTR user_init() {
-
-
-
     uart_init(BIT_RATE_115200, BIT_RATE_115200);                    // Init UART @ 115200 bps    
     
     ETS_GPIO_INTR_DISABLE();                                        // Disable Interrupts
@@ -81,7 +78,7 @@ void ICACHE_FLASH_ATTR user_init() {
     //Setup timer
     os_timer_disarm(&updateTimer);
     os_timer_setfn(&updateTimer, (os_timer_func_t *)updateTimerISR, NULL);
-    os_timer_arm(&updateTimer, 10000, 1); // every 30 seconds
+    os_timer_arm(&updateTimer, 15000, 1); 
     
     networkInit();
     char ssid[32] = SSID;
@@ -127,7 +124,7 @@ void ICACHE_FLASH_ATTR network_check_ip(void) {
 static void ICACHE_FLASH_ATTR tcpNetworkRecvCb(void *arg, char *data, unsigned short len) {
     struct espconn *tcpconn=(struct espconn *)arg;
     os_printf("Recv: %d \n\r", len);
-    os_printf(data); // <===============================================================================================
+    os_printf(data); // <=======================================================================================
     os_printf("\n");
 }
 

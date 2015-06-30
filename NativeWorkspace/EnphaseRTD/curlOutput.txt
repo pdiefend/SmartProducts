@@ -1,1 +1,63 @@
-{"system_id":297704,"modules":24,"size_w":5160,"current_power":1872,"energy_today":30773,"energy_lifetime":11703576,"summary_date":"2015-06-29","source":"microinverters","status":"normal","operational_at":1389183600,"last_report_at":1435613548}
+$ curl -v "https://api.enphaseenergy.com/api/v2/systems/67/summary?key=452a5aac149b0fe246999de0455a7575&user_id=4d7a45774e6a41320a" >> curlOutput.txt
+* Hostname was NOT found in DNS cache
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 198.101.171.58...
+* Connected to api.enphaseenergy.com (198.101.171.58) port 443 (#0)
+* successfully set certificate verify locations:
+*   CAfile: none
+  CApath: /etc/ssl/certs
+* SSLv3, TLS handshake, Client hello (1):
+} [data not shown]
+* SSLv3, TLS handshake, Server hello (2):
+{ [data not shown]
+* SSLv3, TLS handshake, CERT (11):
+{ [data not shown]
+* SSLv3, TLS handshake, Server key exchange (12):
+{ [data not shown]
+* SSLv3, TLS handshake, Server finished (14):
+{ [data not shown]
+* SSLv3, TLS handshake, Client key exchange (16):
+} [data not shown]
+* SSLv3, TLS change cipher, Client hello (1):
+} [data not shown]
+* SSLv3, TLS handshake, Finished (20):
+} [data not shown]
+* SSLv3, TLS change cipher, Client hello (1):
+{ [data not shown]
+* SSLv3, TLS handshake, Finished (20):
+{ [data not shown]
+* SSL connection using ECDHE-RSA-AES256-SHA
+* Server certificate:
+* 	 subject: C=US; ST=California; L=Petaluma; O=Enphase Energy, Inc.; CN=*.enphaseenergy.com
+* 	 start date: 2014-05-27 00:00:00 GMT
+* 	 expire date: 2015-07-29 12:00:00 GMT
+* 	 subjectAltName: api.enphaseenergy.com matched
+* 	 issuer: C=US; O=DigiCert Inc; OU=www.digicert.com; CN=DigiCert High Assurance CA-3
+* 	 SSL certificate verify ok.
+> GET /api/v2/systems/67/summary?key=452a5aac149b0fe246999de0455a7575&user_id=4d7a45774e6a41320a HTTP/1.1
+> User-Agent: curl/7.35.0
+> Host: api.enphaseenergy.com
+> Accept: */*
+> 
+< HTTP/1.1 401 Unauthorized
+< Content-Type: application/json; charset=utf-8
+< Transfer-Encoding: chunked
+< Connection: keep-alive
+< Keep-Alive: timeout=5
+< Status: 401
+< X-Powered-By: Phusion Passenger (mod_rails/mod_rack) 3.0.11
+< X-Frame-Options: SAMEORIGIN
+< X-XSS-Protection: 1; mode=block
+< X-Content-Type-Options: nosniff
+< X-UA-Compatible: chrome=1
+< Cache-Control: no-cache
+< X-Request-Id: f70b8342-1e9f-464a-a6db-decab4d73fbd
+< X-Runtime: 0.074001
+* Server nginx/1.2.3 + Phusion Passenger 3.0.11 (mod_rails/mod_rack) is not blacklisted
+< Server: nginx/1.2.3 + Phusion Passenger 3.0.11 (mod_rails/mod_rack)
+< 
+{ [data not shown]
+100    75    0    75    0     0    281      0 --:--:-- --:--:-- --:--:--   281
+* Connection #0 to host api.enphaseenergy.com left intact
+

@@ -1,7 +1,3 @@
-/* Heavily Modified from a guy named Limpkin who has a blog at
- http://www.limpkin.fr/index.php?post/2014/12/07/First-Steps-with-the-ESP8266-03-Development-Board
-*/
-
 #include "c_types.h"
 #include "ip_addr.h"
 #include "ets_sys.h"
@@ -17,8 +13,17 @@
 #define user_procTaskPrio        0
 #define user_procTaskQueueLen    1
 
+// pjm.com
+#define IP0 192
+#define IP1 251
+#define IP2 13
+#define IP3 151
+#define IP_PORT 80
+#define Oasis "/pub/account/lmpgen/lmppost.html"
+
+
 // forward declarations
-void led_timerfunc(void *arg);
+void LMP_timerfunc(void *arg);
 static void ICACHE_FLASH_ATTR tcpNetworkRecvCb(void *arg, char *data, unsigned short len);
 static void ICACHE_FLASH_ATTR tcpNetworkConnectedCb(void *arg);
 void ICACHE_FLASH_ATTR network_init();
@@ -34,7 +39,7 @@ void ICACHE_FLASH_ATTR user_init();
 os_event_t    user_procTaskQueue[user_procTaskQueueLen];
 
 // RTOS Timers
-static volatile os_timer_t led_timer;
+static volatile os_timer_t LMP_timer;
 LOCAL os_timer_t network_timer;
 
 // Global Variables
@@ -42,20 +47,13 @@ static esp_tcp global_tcp;                              // TCP connect var (see 
 static struct espconn global_tcp_connect;               // Connection struct (see espconn.h)
 static uint8_t tcp_conn_ok = FALSE;                     // Bool to know if tcp connection set
 
-// Timer Function to blink an LED and check if button was pressed
-void led_timerfunc(void *arg) {   
-    // Toggle GPIO2
-    if (GPIO_REG_READ(GPIO_OUT_ADDRESS) & BIT2) {    // If GPIO2 high
-        gpio_output_set(0, BIT2, BIT2, 0);          // Set GPIO2 to LOW
-    } else {
-        gpio_output_set(BIT2, 0, BIT2, 0);          // Set GPIO2 to HIGH
-    }
 
-    // If button was pressed then download weather data
-    if ((GPIO_INPUT_GET(0) == 0) && (tcp_conn_ok == TRUE)) {
-        uint8_t data[75] = "GET /data/2.5/weather?id=5201470 HTTP/1.0\r\nHost: api.openweathermap.org\r\n\r\n";
+// Timer Function to blink an LED and check if button was pressed
+void LMP_timerfunc(void *arg) {   
+    //if ((GPIO_INPUT_GET(0) == 0) && (tcp_conn_ok == TRUE)) {
+        uint8_t data[75] = "GET /pub/account/lmpgen/lmppost.html HTTP/1.0\r\nHost: pjm.com\r\n\r\n";
         espconn_sent(&global_tcp_connect, data, 75);
-    }
+    //}
 }
 
 // If data was received from the TCP connection
@@ -63,6 +61,8 @@ static void ICACHE_FLASH_ATTR tcpNetworkRecvCb(void *arg, char *data, unsigned s
     // create a tempory esp connection struct containing metadata from received data    
     struct espconn *tcpconn=(struct espconn *)arg;
     // print data receieved
+    os_printf("\n\r========================================================");
+    os_printf("Recieved: %d \r\n", len);
     os_printf(data);
 }
 
@@ -111,11 +111,11 @@ static void ICACHE_FLASH_ATTR init_tcp_conn(void) {
     global_tcp_connect.proto.tcp->local_port=espconn_port(); // Ask a free local port to the API
     
     // 188.226.224.148:80, api.openweathermap.org    
-    global_tcp_connect.proto.tcp->remote_ip[0]=188;      // Remote IP
-    global_tcp_connect.proto.tcp->remote_ip[1]=226;      // Remote IP
-    global_tcp_connect.proto.tcp->remote_ip[2]=224;      // Remote IP
-    global_tcp_connect.proto.tcp->remote_ip[3]=148;      // Remote IP
-    global_tcp_connect.proto.tcp->remote_port = 80;      // Set remote port, default web server port
+    global_tcp_connect.proto.tcp->remote_ip[0]=IP0;      // Remote IP
+    global_tcp_connect.proto.tcp->remote_ip[1]=IP1;      // Remote IP
+    global_tcp_connect.proto.tcp->remote_ip[2]=IP2;      // Remote IP
+    global_tcp_connect.proto.tcp->remote_ip[3]=IP3;      // Remote IP
+    global_tcp_connect.proto.tcp->remote_port = IP_PORT;      // Set remote port, default web server port
 
     espconn_regist_connectcb(&global_tcp_connect, tcpNetworkConnectedCb);   // Register connect callback
     espconn_regist_disconcb(&global_tcp_connect, tcpNetworkDisconCb);       // Register disconnect callback
@@ -152,9 +152,10 @@ static void ICACHE_FLASH_ATTR user_procTask(os_event_t *events) {
 
 /* Init function */
 void ICACHE_FLASH_ATTR user_init() {    
-    uart_init(BIT_RATE_57600, BIT_RATE_57600);    // Init UART @ 57600 bps    
+    uart_init(BIT_RATE_115200, BIT_RATE_115200);    // Init UART @ 57600 bps    
                                                   
     ETS_GPIO_INTR_DISABLE();                      // Disable gpio interrupts
+    
     gpio_init();                                  // Initialize the GPIO subsystem.
     PIN_FUNC_SELECT(PERIPHS_IO_MUX_GPIO2_U, FUNC_GPIO2);    // Set GPIO2 function
     gpio_output_set(0, BIT2, BIT2, 0);                      // Set GPIO2 low output
@@ -164,9 +165,9 @@ void ICACHE_FLASH_ATTR user_init() {
     PIN_PULLDWN_DIS(PERIPHS_IO_MUX_MTCK_U);                 // Disable pulldown
     PIN_PULLUP_EN(PERIPHS_IO_MUX_MTCK_U);                   // Enable pullup
     
-    os_timer_disarm(&led_timer);                            // Disarm led timer
-    os_timer_setfn(&led_timer, (os_timer_func_t *)led_timerfunc, NULL); // Setup led timer
-    os_timer_arm(&led_timer, 500, 1);                       // Arm led timer, 0.5sec, repeat
+    os_timer_disarm(&LMP_timer);                            // Disarm led timer
+    os_timer_setfn(&LMP_timer, (os_timer_func_t *)LMP_timerfunc, NULL); // Setup led timer
+    os_timer_arm(&LMP_timer, 30000, 1);                       // Arm 300000 timer, 5 minuntes, repeat
     
     network_init();                                         // Init network timer
     
