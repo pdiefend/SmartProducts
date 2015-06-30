@@ -13,6 +13,7 @@
 #include "ssl/private_key.h"
 #include "jsonparse.h"
 #include "jsontree.h"
+#include "ws2812.h"
 
 //#include "cJSON.h"
 
@@ -50,6 +51,7 @@ static void init_tcp_conn(void);
 
 void updateTimerISR(void *arg) {
     // Start a new connection
+    //setWS2812color(255, 0, 0);
     espconn_secure_connect(&global_tcp_connect);
 /*
     uint8_t data[REQUEST_LEN] = REQUEST_URL;
@@ -76,8 +78,7 @@ void ICACHE_FLASH_ATTR user_rf_pre_init() {
 /* User Init, code execution starts here from OS */
 void ICACHE_FLASH_ATTR user_init() {
     uart_init(BIT_RATE_115200, BIT_RATE_115200);                    // Init UART @ 115200 bps    
-    
-    os_printf("Begin");
+    os_printf("\r\n\r\nBegin");
     
     /*
     uint8_t data[RESPONSE_LEN] = RESPONSE;
@@ -112,12 +113,12 @@ void ICACHE_FLASH_ATTR user_init() {
     os_memcpy(&stationConf.ssid, ssid, 32);
     os_memcpy(&stationConf.password, password, 64);
     wifi_station_set_config(&stationConf);
-    wifi_status_led_install(2, PERIPHS_IO_MUX_GPIO2_U, FUNC_GPIO2);     // Set GPIO2 as WiFi status LED
+    //wifi_status_led_install(2, PERIPHS_IO_MUX_GPIO2_U, FUNC_GPIO2);     // Set GPIO2 as WiFi status LED
 
     //Start os task
     system_os_task(user_procTask, user_procTaskPrio,user_procTaskQueue, user_procTaskQueueLen);
     os_printf("\n\rStartup done\n\r");
-    
+    //setWS2812color(0, 0, 255);
 }
 
 /* network init function */
@@ -148,6 +149,7 @@ void ICACHE_FLASH_ATTR network_check_ip(void) {
 ** run returns the number datapoint that was just received. */    
 static void ICACHE_FLASH_ATTR tcpNetworkRecvCb(void *arg, char *data, unsigned short len) {
     struct espconn *tcpconn=(struct espconn *)arg;
+    //setWS2812color(0, 255, 0);
     os_printf("Recv: %d \n\r", len);
     os_printf(data); // <=======================================================================================
     os_printf("\n");
