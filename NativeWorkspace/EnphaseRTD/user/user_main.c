@@ -98,6 +98,7 @@ void ICACHE_FLASH_ATTR user_init() {
     
     ETS_GPIO_INTR_DISABLE();                                        // Disable Interrupts
     gpio_init();                                                    // Enable GPIOS
+    PIN_FUNC_SELECT(PERIPHS_IO_MUX_GPIO2_U, FUNC_GPIO2);
     ETS_GPIO_INTR_ENABLE();                                         // Enable interrupts
 
     //Setup timer
@@ -119,6 +120,20 @@ void ICACHE_FLASH_ATTR user_init() {
     system_os_task(user_procTask, user_procTaskPrio,user_procTaskQueue, user_procTaskQueueLen);
     os_printf("\n\rStartup done\n\r");
     //setWS2812color(0, 0, 255);
+    
+    /*
+    gpio_output_set(0, BIT2, BIT2, 1);
+    gpio_output_set(0, BIT2, BIT2, 0);
+    gpio_output_set(0, BIT2, BIT2, 1);
+    gpio_output_set(0, BIT2, BIT2, 0);
+    gpio_output_set(0, BIT2, BIT2, 1);
+    gpio_output_set(0, BIT2, BIT2, 0);
+    volatile int i = 0;
+    while(i < 10)
+        i++;
+    gpio_output_set(0, BIT2, BIT2, 1);
+    gpio_output_set(0, BIT2, BIT2, 0);
+    */
 }
 
 /* network init function */
