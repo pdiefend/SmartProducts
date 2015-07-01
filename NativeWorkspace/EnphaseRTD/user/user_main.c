@@ -52,7 +52,23 @@ static void init_tcp_conn(void);
 void updateTimerISR(void *arg) {
     // Start a new connection
     //setWS2812color(255, 0, 0);
-    espconn_secure_connect(&global_tcp_connect);
+    
+    gpio_output_set(BIT2, 0, BIT2, 0); // GPIO2 HIGH //.6uS
+    gpio_output_set(0, BIT2, BIT2, 0); // GPIO2 LOW
+    gpio_output_set(BIT2, 0, BIT2, 0); // GPIO2 HIGH
+    gpio_output_set(0, BIT2, BIT2, 0); // GPIO2 LOW
+    
+    GPIO_REG_WRITE(GPIO_OUT_W1TS_ADDRESS, BIT2); //.12uS !!!!!!
+    GPIO_REG_WRITE(GPIO_OUT_W1TC_ADDRESS, BIT2);
+    
+    
+    volatile int i = 0; // 2-2.3uS
+    while(i < 10)
+        i++;
+    gpio_output_set(BIT2, 0, BIT2, 0); // GPIO2 HIGH
+    gpio_output_set(0, BIT2, BIT2, 0); // GPIO2 LOW
+    
+    //espconn_secure_connect(&global_tcp_connect);
 /*
     uint8_t data[REQUEST_LEN] = REQUEST_URL;
     
@@ -101,10 +117,16 @@ void ICACHE_FLASH_ATTR user_init() {
     PIN_FUNC_SELECT(PERIPHS_IO_MUX_GPIO2_U, FUNC_GPIO2);
     ETS_GPIO_INTR_ENABLE();                                         // Enable interrupts
 
+    PIN_PULLUP_EN(PERIPHS_IO_MUX_GPIO2_U);
+    gpio_output_set(0, BIT2, BIT2, 0);
+
+    //PIN_PULLUP_DIS(PERIPHS_IO_MUX_GPIO2_U);
+    
+    
     //Setup timer
     os_timer_disarm(&updateTimer);
     os_timer_setfn(&updateTimer, (os_timer_func_t *)updateTimerISR, NULL);
-    os_timer_arm(&updateTimer, 15000, 1); 
+    os_timer_arm(&updateTimer, 5000, 1); 
     
     networkInit();
     char ssid[32] = SSID;
