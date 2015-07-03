@@ -33,6 +33,7 @@ static volatile os_timer_t networkTimer;
 
 // User variables
 //ip_addr_t esp_server_ip;
+static volatile color;
 
 // Forward Declarations
 int atoi(char* s);
@@ -51,22 +52,57 @@ static void init_tcp_conn(void);
 
 void updateTimerISR(void *arg) {
     // Start a new connection
-    //setWS2812color(255, 0, 0);
+    os_printf("Timer\r\n");
+    //setWS2812color(170, 170, 170);
+    switch(color){
+        case 0:
+            setWS2812color(170,0, 0);
+            color ++;
+            break;
+        case 1:
+            setWS2812color(0,170, 0);
+            color ++;
+            break;
+        case 2:
+            setWS2812color(0, 0, 170);
+            color = 0;
+            break;
+        default:
+            setWS2812color(0, 0, 0);
+            color = 0;
+            break;
+            
+    }
+    //uint8_t data[3] = {170, 170, 170};
+    //WS2812OutBuffer(data, 3);
     
+    /*
+    volatile int i = 0; // 2-2.3uS
+     
     gpio_output_set(BIT2, 0, BIT2, 0); // GPIO2 HIGH //.6uS
     gpio_output_set(0, BIT2, BIT2, 0); // GPIO2 LOW
     gpio_output_set(BIT2, 0, BIT2, 0); // GPIO2 HIGH
     gpio_output_set(0, BIT2, BIT2, 0); // GPIO2 LOW
     
+    
     GPIO_REG_WRITE(GPIO_OUT_W1TS_ADDRESS, BIT2); //.12uS !!!!!!
+    i++;    
     GPIO_REG_WRITE(GPIO_OUT_W1TC_ADDRESS, BIT2);
+    gpio_output_set(0, BIT2, BIT2, 0); // GPIO2 LOW
+    i++;
+    gpio_output_set(BIT2, 0, BIT2, 0); // GPIO2 HIGH
     
-    
-    volatile int i = 0; // 2-2.3uS
-    while(i < 10)
+    i++;
+    i++;
+    i++;   
+    GPIO_REG_WRITE(GPIO_OUT_W1TS_ADDRESS, BIT2); //.12uS !!!!!!
+    gpio_output_set(0, BIT2, BIT2, 0); // GPIO2 LOW
+    while(i<10)
         i++;
+    
     gpio_output_set(BIT2, 0, BIT2, 0); // GPIO2 HIGH
     gpio_output_set(0, BIT2, BIT2, 0); // GPIO2 LOW
+    */
     
     //espconn_secure_connect(&global_tcp_connect);
 /*
@@ -95,7 +131,7 @@ void ICACHE_FLASH_ATTR user_rf_pre_init() {
 void ICACHE_FLASH_ATTR user_init() {
     uart_init(BIT_RATE_115200, BIT_RATE_115200);                    // Init UART @ 115200 bps    
     os_printf("\r\n\r\nBegin");
-    
+    color = 0;
     /*
     uint8_t data[RESPONSE_LEN] = RESPONSE;
     struct jsonparse_state state;
@@ -118,7 +154,7 @@ void ICACHE_FLASH_ATTR user_init() {
     ETS_GPIO_INTR_ENABLE();                                         // Enable interrupts
 
     PIN_PULLUP_EN(PERIPHS_IO_MUX_GPIO2_U);
-    gpio_output_set(0, BIT2, BIT2, 0);
+    GPIO_REG_WRITE(GPIO_OUT_W1TC_ADDRESS, BIT2);
 
     //PIN_PULLUP_DIS(PERIPHS_IO_MUX_GPIO2_U);
     
